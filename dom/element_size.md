@@ -1,1 +1,2 @@
-<img src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png">
+元素大小的说明
+<img src="https://github.com/reng99/javascript/blob/master/shot_imgs/test.jpeg">
