@@ -4,9 +4,9 @@
 
 _.each(list,iteratee,[context])
 
-如果不是很理解content,可以参考下[question0_context_argument.md](../questions/question0_context_argument.md)这篇文章
 
 ```
+如果不是很理解content,可以参考下[question0_context_argument.md](../questions/question0_context_argument.md)这篇文章
 遍历list中的所有的元素,按照顺序用遍历输出每个元素,如果传递了context参数，则把iteratee绑定到context对象上。
 每次调用iteratee都会传递三个参数：(element,index,list)。如果List是javascript对象，iteratee的参数就是(value,key,list)。返回list以方便链式调用。
 
