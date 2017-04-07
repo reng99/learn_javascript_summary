@@ -34,3 +34,25 @@ var evens = _.filter([1,2,3,4],function(num){
 =>[2,4]
 
 ```
+
+### where
+
+```bash
+
+_.where(list,properties)
+
+```
+遍历list中的每个值，返回一个数组，这个数组包含properties所有的`键-值对`。
+```bash
+
+var list = [
+	{title:'aaa',year:1980},
+	{title:'bbb',year:1981},
+	{title:'ccc',year:1982}
+];
+console.log(
+	_.where(list,{year:1982})
+);
+=>[{title:'ccc',year:1982}]
+
+```
