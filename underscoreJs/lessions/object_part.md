@@ -2,7 +2,7 @@
 
 ## keys 和 values
 
-### keys
+> keys
 `_.key(object)`
 检索object拥有的所有可枚举属性的名称。
 ```javascript
@@ -12,7 +12,7 @@ _.keys({one:1,two:2,three:3});
 
 ```
 
-### allKeys
+> allKeys
 `_allKeys(object)`
 检索object拥有的和继承的所有属性的名称。
 ```javascript
@@ -26,7 +26,7 @@ _.allKeys(new Stooge('moe'));
 
 ```
 
-### values
+> values
 `_.values(object)`
 返回object对象所有的属性值。
 ```javascript
@@ -38,7 +38,7 @@ _.values({one:1,two:2,three:3});
 
 ## 对象遍历
 
-### mapObject
+> mapObject
 `_.mapObject(object,iteratee,[context])`
 它类似于map,但是这用于对象。转换每个属性的值。
 ```javascript
@@ -52,7 +52,7 @@ _.mapObject({start:5,end:12},function(val,key){
 
 ## 转换和对调
 
-### pairs
+> pairs
 `pairs(object)`
 把一个对象转变成为一个`[key,value]`形式的数组。
 ```javascript
@@ -62,7 +62,7 @@ _.pairs({one:1,two:2,three:3});
 
 ```
 
-### invert
+> invert
 `_.invert(object)`
 invert(转换),返回的是一个object的副本，使其键(keys)和值(values)对话。对于这个操作，必须保证object里面所有的值都是`唯一的并且可以序列号成字符串`.
 ```javascript
@@ -74,7 +74,7 @@ _.invert({moe:'moese',larray:'louis',curly:'jerome'});
 
 ## 复制
 
-### extend
+> extend
 复制对象的所有属性到目标对象上，`覆盖`已有属性。
 ```javascript
 
@@ -85,7 +85,7 @@ console.log(
 
 ```
 
-###defaults
+>defaults
 复制对象的所有属性到目标对象上，`跳过`已有属性。
 ```javascript
 
@@ -99,7 +99,7 @@ console.log(
 
 ```
 
-### clone
+> clone
 创建 一个浅复制（浅拷贝）的克隆object。`clone对象，不进行复制`
 ```javascript
 

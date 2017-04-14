@@ -1,6 +1,6 @@
 # 数组部分
 ## 元素位置操作
-### first
+> first
 ```javascript
 
 _.first(array,[n])
@@ -17,7 +17,7 @@ _.first([5,4,3,2,1],2);
 
 ```
 
-### initial
+> initial
 ```javascript
 
 _.initial(array,[n]);
@@ -34,7 +34,7 @@ _.initial([5,4,6,2,1],3);
 
 ```
 
-### last
+> last
 ```javascript
 
 _.last(array,[n]);
@@ -52,7 +52,7 @@ _.last([5,4,3,2,1],3);
 
 ```
 
-### rest
+> rest
 ```javascript
 
 _.rest(array,[index])
@@ -70,7 +70,7 @@ _.rest([5,4,3,2,1],2);
 ```
 
 ## 获取索引位置
-### indexOf 
+> indexOf 
 ```javascript
 
 _.indexOf(array,value,[isSorted])
@@ -84,7 +84,7 @@ _.indexOf([1,2,3],2);
 =>1
 
 ```
-### lastIndexOf
+> lastIndexOf
 ```javascript
 
 _.lastIndexOf(list,value,[fromIndex])
@@ -102,7 +102,7 @@ _.lastIndexOf([1,2,3,1,2,3],2,3);
 
 ```
 
-### sortedIndex
+> sortedIndex
 ```javascript
 
 _sortedIndex(list,value,[iteratee],[context])
@@ -126,7 +126,7 @@ _sortedIndex(stooges,{name:'larray',age:50},'age');
 ```
 
 ##  去除空值和嵌套
-### compact  `compact(简洁)`
+> compact  `compact(简洁)`
 ```javascript
 
 _.compact(array)
@@ -140,7 +140,7 @@ _.compact([0,1,false,2,'',3]);
 
 ```
 
-### flatten  `flatten(夷平)`
+> flatten  `flatten(夷平)`
 ```javascript
 
 _.flatten(array,[shallow])
@@ -158,7 +158,7 @@ _flatten([1,[2],[3,[[4]]]],true);
 ```
 
 ## 元素位置操作
-### range
+> range
 ```javascript
 
 _.range([start],stop,[step])
@@ -187,7 +187,7 @@ _.range(0);
 ```
 
 ## 合并和转换
-### zip  （zip 压缩）
+> zip  （zip 压缩）
 ```javascript
 
 _.zip(*arrays)
@@ -201,7 +201,7 @@ _.zip(['moe','larry','curly'],[30,40,50],[true,true,false]);
 
 ```
 
-### object
+> object
 ```javascript
 
 _.object(list,[values])
