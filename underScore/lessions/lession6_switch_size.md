@@ -1,12 +1,12 @@
 ## 转换和获取个数
 ### toArray
-```bash
+```javascript
 
 _.toArray(list)
 
 ```
 把list（任何可以迭代的对象）转换成为一个数组，在转换`arguments`对象时非常有用。
-```bash
+```javascript
 
 (function(){
 	return _.toArray(arguments).slice(1);
@@ -27,13 +27,13 @@ end 可选，规定从何处选取。该参数是数组片段结束处的数组�
 ```
 
 ### size
-```bash
+```javascript
 
 _.size(list)
 
 ```
 返回list的长度
-```bash
+```javascript
 
 _.size([2,3,4]);
 =>3

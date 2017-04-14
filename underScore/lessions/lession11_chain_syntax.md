@@ -5,7 +5,7 @@
 `_.chain(obj)`
 链式操作写起来非常顺畅，代码也会非常语义化。可以参考下jquery。
 underscore.js中也支持将代码写成链式的，API为chain,chain返回的是一个`包装过的underscore对象`，到链式结束的时候，`需要调用value来获取最终的结果`。
-```bash
+```javascript
 
 eg:
 	var stooges = [
@@ -25,7 +25,7 @@ eg:
 ## value
 `_(obj).value()`
 获取封装对象的最终值。
-```bash
+```javascript
 
 _([1,2,3]).value();
 =>[1,2,3]

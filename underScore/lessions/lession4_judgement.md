@@ -1,13 +1,13 @@
 ## 判断和提取
 ### contains
 
-```bash
+```javascript
 
 _.contains(list,value,[fromIndex])
 
 ```
 判断元素是否在list中，如果list中包含指定的value则返回true（使用===检测）。如果list是数组，内部使用indexOf判断。使用fromIndex来给定开始检索的位置。
-```bash
+```javascript
 
 _.contains([1,2,3],3);
 =>true
@@ -20,14 +20,14 @@ _.contains([1,2,3],3,0);
 ```
 
 ### pluck
-```bash
+```javascript
 
 _.pluck(list,propertyName)
 
 ```
 提取一个集合中指定的属性值，pluck也许是map中最常使用的用例模型的简化版本，即萃取数组对象中某属性值，返回一个数组。
 
-```bash
+```javascript
 
 var stooges = [
 	{name:'moe',age:80},
@@ -42,14 +42,14 @@ _.pluck(stooges,'name');
 
 ## 判断最大值和最小值
 ### max
-```bash
+```javascript
 
 _.max(list,[iteratee],[context])
 
 ```
 返回list中最大值。如果传递iteratee参数,iteratee将作为list中每个值的排序依据。如果list为空，返回-infinity，所以你可能需要事先用isEmpty检查list。
 
-```bash
+```javascript
 
 _.max([1,2,3]);
 =>3
@@ -71,13 +71,13 @@ _.max(stooges,function(stooge){
 
 ### min
 
-```bash
+```javascript
 
 _.min(list,[iteratee],[context])
 
 ```
 返回list中的最小值。如果传递iteratee参数，iteratee将作为list中的每个值的排序依据。如果list为空，将返回-Inifity(参考上面的max中的相关代码)，所以你可能需要先用isEmpty检查list。
-```bash
+```javascript
 
 var numbers = [10,5,100,2,1000];
 _.min(numbers);

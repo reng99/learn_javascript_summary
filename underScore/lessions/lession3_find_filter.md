@@ -1,6 +1,6 @@
 ## 查找和过滤
 ### find
-```bash
+```javascript
 
 _.find(list,predicate,[context])
 
@@ -9,7 +9,7 @@ _.find(list,predicate,[context])
 在list中逐项查找，返回 ｀第一个｀通过predicate迭代函数真值检测的元素值，如果没有值传递给测试迭代器将返回undefined。
 如果找到匹配的元素，函数将立即返回，不会遍历整个list。
 
-```bash
+```javascript
 
 var even = _.find([1,2,3,4],function(num){
 	return num % 2 ==0;
@@ -20,13 +20,13 @@ var even = _.find([1,2,3,4],function(num){
 
 ### filter
  
-```bash
+```javascript
 
 _.filter(list,predicate,[context])
 
 ```
 遍历list中的每个值，返回包含`所有`通过predicate真值检测的元素值。
-```bash
+```javascript
 
 var evens = _.filter([1,2,3,4],function(num){
 	return num % 2 == 0;
@@ -37,13 +37,13 @@ var evens = _.filter([1,2,3,4],function(num){
 
 ### where
 
-```bash
+```javascript
 
 _.where(list,properties)
 
 ```
 遍历list中的每个值，返回一个数组，这个数组包含properties所有的`键-值对`。
-```bash
+```javascript
 
 var list = [
 	{title:'aaa',year:1980},

@@ -1,6 +1,6 @@
 ## 遍历
 ### _.each
-```bash
+```javascript
 
 _.each(list,iteratee,[context])
 
@@ -11,7 +11,7 @@ _.each(list,iteratee,[context])
 遍历list中的所有的元素,按照顺序用遍历输出每个元素,如果传递了context参数，则把iteratee绑定到context对象上。
 每次调用iteratee都会传递三个参数：(element,index,list)。如果List是javascript对象，iteratee的参数就是(value,key,list)。返回list以方便链式调用。
 
-```bash
+```javascript
 
 _.each([1,2,3],alert);
 =>alert each numbere in turn...
@@ -25,14 +25,14 @@ _.each({one:1,two:2,three:3},alert);
 但是它通过鸭子类型工作，所以要避免传递一个不固定length属性的对象。每个循环不能被破坏打破，通过使用`_.find`代替，是一个好的idea。
 
 ### _.map
-``` bash 
+``` javascript 
 
 _map(list,iteratee,[context])
 
 ```
 通过转换函数(iteratee迭代器)映射列表中的每个值产生价值的新数组
 iteratee传递三个参数:value,然后是迭代的index,最后一个是引用指向整个List。
-``` bash
+``` javascript
 
 _.map([1,2,3],function(num){return num*3});
 =>[3,6,9]

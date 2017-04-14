@@ -5,7 +5,7 @@
 ### keys
 `_.key(object)`
 检索object拥有的所有可枚举属性的名称。
-```bash
+```javascript
 
 _.keys({one:1,two:2,three:3});
 =>['one','two','three']
@@ -15,7 +15,7 @@ _.keys({one:1,two:2,three:3});
 ### allKeys
 `_allKeys(object)`
 检索object拥有的和继承的所有属性的名称。
-```bash
+```javascript
 
 function Stooge(name){
 	this.name = name;
@@ -29,7 +29,7 @@ _.allKeys(new Stooge('moe'));
 ### values
 `_.values(object)`
 返回object对象所有的属性值。
-```bash
+```javascript
 
 _.values({one:1,two:2,three:3});
 =>[1,2,3]
@@ -41,7 +41,7 @@ _.values({one:1,two:2,three:3});
 ### mapObject
 `_.mapObject(object,iteratee,[context])`
 它类似于map,但是这用于对象。转换每个属性的值。
-```bash
+```javascript
 
 _.mapObject({start:5,end:12},function(val,key){
 	return val + 5;
@@ -55,7 +55,7 @@ _.mapObject({start:5,end:12},function(val,key){
 ### pairs
 `pairs(object)`
 把一个对象转变成为一个`[key,value]`形式的数组。
-```bash
+```javascript
 
 _.pairs({one:1,two:2,three:3});
 =>[['one',1],['two',2],['three',3]]
@@ -65,7 +65,7 @@ _.pairs({one:1,two:2,three:3});
 ### invert
 `_.invert(object)`
 invert(转换),返回的是一个object的副本，使其键(keys)和值(values)对话。对于这个操作，必须保证object里面所有的值都是`唯一的并且可以序列号成字符串`.
-```bash
+```javascript
 
 _.invert({moe:'moese',larray:'louis',curly:'jerome'});
 =>{moese:'moe',loius:'larray',jerome:'curly'};
@@ -76,7 +76,7 @@ _.invert({moe:'moese',larray:'louis',curly:'jerome'});
 
 ### extend
 复制对象的所有属性到目标对象上，`覆盖`已有属性。
-```bash
+```javascript
 
 console.log(
 		_.extend({name:'moe'},{age:50})
@@ -87,7 +87,7 @@ console.log(
 
 ###defaults
 复制对象的所有属性到目标对象上，`跳过`已有属性。
-```bash
+```javascript
 
 var iceCream = {flavor:'chocolate'};
 console.log(
@@ -101,7 +101,7 @@ console.log(
 
 ### clone
 创建 一个浅复制（浅拷贝）的克隆object。`clone对象，不进行复制`
-```bash
+```javascript
 
 console.log(
 		_.clone({name:'moe'});
@@ -133,7 +133,7 @@ eg:
 interceptor(拦截)
 用object作为参数来调用函数interceptor,然后返回object。这种方法的主要意图是
 作为函数链式调用的一环，为了对此对象执行操作并返回对象本身。
-```bash
+```javascript
 
 console.log(
 		_.chain([1,2,3,200])
@@ -150,7 +150,7 @@ console.log(
 ## 比较
 `-.isEqual(object,other)`
 执行`两个对象之间的优化深度比较`，确定它们是否应该被视为相等。
-```bash
+```javascript
 
 var stooge = {name:'moe',luckyNumbers:[13,27,34]};
 var clone = {name:'moe',luckyNumbers:[13,27,34]};

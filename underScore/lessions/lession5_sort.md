@@ -1,12 +1,12 @@
 ## 排序
 ### sortBy 
-```bash
+```javascript
 
 _.sortBy(list,iteratee,[context])
 
 ```
 返回一个排序后的list拷贝副本。如果传递iteratee参数，iteratee将作为list中每个值的排序的依据。迭代器也可以是字符串的属性名称进行排序的（比如length）。
-```bash
+```javascript
 
 _.sort([3,1,5]);
 =>[1,3,5]  //默认是从小到大的排序
