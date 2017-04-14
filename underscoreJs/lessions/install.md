@@ -23,3 +23,5 @@ eg:
 	使用：var _ = require('underscore');
 
 ```
+
+[返回underscore目录](../index.md)

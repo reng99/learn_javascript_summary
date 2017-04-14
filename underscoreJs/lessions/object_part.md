@@ -161,20 +161,4 @@ _.isEqual(stooge,clone);
 
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[返回underscore目录](../index.md)

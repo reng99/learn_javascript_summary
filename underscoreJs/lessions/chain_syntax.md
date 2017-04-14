@@ -32,3 +32,5 @@ _([1,2,3]).value();
 
 ```
 [详细可参考chain中的例子](#value)
+
+[返回underscore目录](../index.md)

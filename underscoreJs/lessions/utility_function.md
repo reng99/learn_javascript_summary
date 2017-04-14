@@ -71,21 +71,4 @@ _.result(object,'meat','ham');
 
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+[返回underscore目录](../index.md)
