@@ -4,6 +4,6 @@
 
 - [原生javascript]
 
-- [js库 threejs]
+- [js库 threejs](./threeJs/index.md)
 
 - [js库 underscore](./underscoreJs/index.md)
