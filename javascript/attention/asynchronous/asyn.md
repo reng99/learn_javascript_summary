@@ -1,4 +1,6 @@
-了解：setTimeout和setInterval是异步的
+## 异步中的 setTimeout 和 setInterval
+
+```
 
 两段代码的比较：
 第一段代码：
@@ -29,3 +31,5 @@ function fn(){
 fn();
 将输出的结果是：
 	过了两秒钟之后，立马输出3，3，3，3
+
+```
