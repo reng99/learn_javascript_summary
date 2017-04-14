@@ -218,4 +218,3 @@ _.object([['moe',30],['larry',40],['curly',50]]);
 
 ```
 
-[返回underscore目录](../index.md)
