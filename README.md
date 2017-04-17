@@ -4,7 +4,8 @@
 
 - [原生javascript](./javascript/)
 
-- [js库 threejs](./threeJs/)
+- [threejs](./threeJs/) 
+	threeJs是一款开源的主流3D绘图JS引擎。
 
 - [js库 underscore](./underscoreJs/)
 
