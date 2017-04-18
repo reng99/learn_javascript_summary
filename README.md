@@ -9,6 +9,6 @@
 
 - [js库 underscore](./underscoreJs/)
 
-- [js框架 backbone](./backbone/)
+- [js-mvc框架 backbone](./backbone/)
 
 - [js库 jQuery](./jQuery/)
