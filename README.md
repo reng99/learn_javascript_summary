@@ -12,3 +12,6 @@
 - [js-mvc框架 backbone](./backbone/)
 
 - [js库 jQuery](./jQuery/)
+
+- [nodeJs](./node/)
+	基于chrome v8引擎的javascript运行环境
