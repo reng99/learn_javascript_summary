@@ -18,4 +18,6 @@
 
 - [nodejs 模块系统](./lessions/module-system.md)
 
+- [nodejs 函数](./lessions/function.md)
+
 
