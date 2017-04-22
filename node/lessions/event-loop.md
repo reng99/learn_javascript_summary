@@ -128,6 +128,7 @@ program end
 Error : ENOENT,open 'input.txt'
 
 ```
+因为文件input.txt不存在，所以输出了错误信息。
 
 
 
