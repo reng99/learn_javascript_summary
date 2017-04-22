@@ -138,6 +138,42 @@ listener1 不再受监听。
 
 ```
 
+### error 事件
+EventEmitter 定义了一个特殊的事件error，它包含了错误的语义，当遇到异常的时候通常会触发error事件。
+当error被触发时，EventEmitter 规定如果没有响应的监听器，nodejs 会把它当作异常，退出程序并输出错误信息。
+我们一般要为会触发error事件的对象设置监听器，避免遇到错误后整个程序的崩溃，例如：
+```javascript
+
+var events = require('events');
+var emitter = new events.EventEmitter();
+emitter.emit('error');
+
+```
+运行时会显示下面的错误：
+```javascript
+
+throw e; // process.nextTick error, or 'error' event on first tick 
+^ 
+Error: Uncaught, unspecified 'error' event. 
+at EventEmitter.emit (events.js:50:15) 
+at Object.<anonymous> (/home/byvoid/error.js:5:9) 
+at Module._compile (module.js:441:26) 
+at Object..js (module.js:459:10) 
+at Module.load (module.js:348:31) 
+at Function._load (module.js:308:12) 
+at Array.0 (module.js:479:10) 
+at EventEmitter._tickCallback (node.js:192:40) 
+
+```
+
+### 继承EventEmitter
+
+> 大多数的时候，我们不会直接使用EventEmitter,而是在对象中继承它。包括fs、net、http在内的，只要是支持事件响应的核心模块都是EventEmitter的子类。
+为什么这么做呢？
+原因有以下两点：
+首先，具有某个实体功能的对象实现事件符合语义，事件的监听和发射是一个对象的方法。
+其次，javascript的对象机制是基于原型的，支持部分多重继承，继承EventEmitter不会打乱对象原有的继承关系。
+
 
 
 
