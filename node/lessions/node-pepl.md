@@ -1,6 +1,7 @@
-> node.js pepl(交互解释器)
+## node.js pepl(交互解释器)
 
-nodejs pepl表示一个电脑的环境，类似windoe系统的终端或者unix/linux shell，我们可以在终端输入命令，并接受系统的响应。
+> nodejs pepl表示一个电脑的环境，类似windoe系统的终端或者unix/linux shell，我们可以在终端输入命令，并接受系统的响应。
+
 node自带了交互式解释器，可以执行以下任务：
 - [读取]
 	读取用户的输入，解析输入了javascript数据结构并存储在内存中。

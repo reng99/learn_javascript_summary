@@ -1,4 +1,4 @@
-> nodejs应用的组成部分
+## nodejs应用的组成部分
 
 - [引入required模块]
 	可以使用require指令来载入nodejs模块。
