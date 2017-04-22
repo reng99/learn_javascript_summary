@@ -20,4 +20,6 @@
 
 - [nodejs 函数](./lessions/function.md)
 
+- [nodejs 路由](./lessions/route.md)
+
 
