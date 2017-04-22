@@ -72,7 +72,9 @@ listener 2 arg1 参数 arg2参数
 以上的例子，emitter为事件someEmitter注册了两个事件的监听器，然后触发了someEvent事件。
 运行结果中可以看到两个事件监听器回调函数先后被调用。这就是EventEmitter最简单的用法。
 EventEmitter还提供了多个属性，如on和emit 。`on函数用于绑定事件函数，emit属性用于触发一个事件`。
+
 下面的截图是EventEmitter的属性介绍：
+
 <img src="../dist/imgs/event-emitter-img01.png">
 
 <img src="../dist/imgs/event-emitter-img02.png">
