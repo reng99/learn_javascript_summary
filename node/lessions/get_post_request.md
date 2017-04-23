@@ -37,7 +37,7 @@ http.createServer(function(req,res){
 
 	//解析url参数
 	var params = url.parse(req.url,true).query;
-	res.write('name :+params.name);
+	res.write('name :'+params.name);
 	res.write('\n');
 	res.write('the website url :'+params.url);
 	res.end();
