@@ -91,7 +91,7 @@ Server running at http://127.0.0.1:8081
 ```
 接着我们在浏览器中打开网址`http://127.0.0.1:8081/index.html或者localhost:8081/index.html`，显示如下面所示：
 
-<img src="../dist/imgs/web_module_img02.jpg">
+<img src="../dist/imgs/web_module_img02.png">
 
 
 
