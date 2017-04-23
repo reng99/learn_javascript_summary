@@ -19,7 +19,7 @@ http.createServer(function(req,res){
 }).listen(3000);
 
 ```
-运行后在浏览中访问 http://localhost:3000/user?name=rengjia&url=www.github.com/reng99,然后查看返回结果：
+运行后在浏览中访问 `http://localhost:3000/user?name=rengjia&url=www.github.com/reng99`,然后查看返回结果：
 
 <img src="../dist/imgs/get-img01.png">
 
@@ -37,14 +37,14 @@ http.createServer(function(req,res){
 
 	//解析url参数
 	var params = url.parse(req.url,true).query;
-	res.write('name'：'+params.name);
+	res.write('name :+params.name);
 	res.write('\n');
-	res.write('the website url：'+params.url);
+	res.write('the website url :'+params.url);
 	res.end();
 }).listen(3000);
 
 ```
-同样的，运行后在浏览中访问 http://localhost:3000/user?name=rengjia&url=www.github.com/reng99,然后查看返回结果：
+同样的，运行后在浏览中访问 `http://localhost:3000/user?name=rengjia&url=www.github.com/reng99`,然后查看返回结果：
 
 <img src="../dist/imgs/get-img02.png">
 
@@ -122,11 +122,11 @@ http.createServer(function (req, res) {
 ```
 运行上面的代码，然后在浏览器上输入localhost:8000或者127.0.0.1:8000，示例如下：
 
-<img src="../dist/imgs/post_img01.png">
+<img src="../dist/imgs/post_img_01.png">
 
-<img src="../dist/imgs/post_img02.png">
+<img src="../dist/imgs/post_img_02.png">
 
-<img src="../dist/imgs/post_img03.png">
+<img src="../dist/imgs/post_img_03.png">
 
 
 
