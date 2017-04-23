@@ -87,6 +87,9 @@ var obj = new Person();
 console.log(util.inspect(obj)); 
 console.log(util.inspect(obj, true)); 
 
+var type = typeof (util.inspect(obj));
+console.log(type);
+
 ```
 运行结果是：
 ```javascript
@@ -101,6 +104,8 @@ Person {
      [arguments]: null,
      [caller]: null,
      [prototype]: { [constructor]: [Circular] } } }
+
+string
 
 ```
 
