@@ -26,4 +26,5 @@
 
 - [nodejs get/post请求](./lessions/get_post_request.md)
 
+- [nodejs web 模块](./lessions/web-module.md)
 
