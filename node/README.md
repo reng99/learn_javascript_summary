@@ -22,6 +22,8 @@
 
 - [nodejs 路由](./lessions/route.md)
 
+- [nodejs 常用工具](./lessions/util.md)
+
 - [nodejs get/post请求](./lessions/get_post_request.md)
 
 
