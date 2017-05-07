@@ -11,3 +11,5 @@ Vue.config是一个对象，包含Vue的全局配置。可以在启动应用之�
 - [errorHandler](./errorHandler.md)
 
 - [ignoreElements](./ignoreElements.md)
+
+- [keyCodes](./keyCodes.md)
