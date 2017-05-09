@@ -1,4 +1,11 @@
-### 参数说明
+### mutations参数说明
+
+mutations.js中的函数可以传一个参数
+
+`[事件名](state)`
+
+参数state 指的是store中state.js的所有的数据信息。
+
 
 mutations.js中的函数一般是传两个参数
 
