@@ -1,7 +1,9 @@
 ## 元素大小的说明
 
 > 偏移量
+
 <img src="../static/img/offset_dimension.png"/>
+
 ``` 
 
 offsetHeight:
@@ -19,7 +21,9 @@ offsetTop:
 ```
 
 > 客户区大小
+
 <img src="../static/img/client_dimension.png"/>
+
 ```
 
 clientHeight:
@@ -31,7 +35,9 @@ clientWidth:
 ```
 
 > 滚动大小
+
 <img src="../static/img/scroll_dimension.png"/>
+
 ```
 
 scrollHeight:
