@@ -3,4 +3,4 @@
 
 - [全局配置](./global_config/)
 
-- [生命周期钩子](./life_cycle_hooks/)
+- [生命周期钩子](./life_cycle_hook/)
