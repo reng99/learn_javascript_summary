@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>three js - assii effect</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,user-scalable=no,minimum-scale=1.0,maximum-scale=1.0">
+	<style type="text/css">
+		body{
+			font-family: monospace;
+			background-color: #f0f0f0;
+			margin:0px;
+			overflow:hidden;
+		}
+	</style>
+</head>
+<body>
+<script src="./three.js"></script>
+
+<!-- 漫游器设置 -->
+<script src="./js/controls/TrackballControls.js"></script>
+<script src="./js/effects/AsciiEffect.js"></script>
+
+<!-- 投影的效果 -->
+<script src="./js/renderers/Projector.js"></script>
+<script src="./js/renderers/CanvasRenderer.js"></script>
+
+<!-- 性能的分析 -->
+<script src="./js/libs/stats.min.js"></script>
+
+<script type="text/javascript">
+	var container , stats;
+
+	var camera,controls,scene,renderer;
+	var effect;
+
+	var sphere;
+	var plane;
+
+	var start = Date.now();
+
+
+	function init(){
+		var width = window.innerWidth || 2;
+		var height = window.innerHeight || 2;
+
+		container = document.createElement("div");//创建元素，获得挂在的元素盒子
+		container.className = "reng";
+		document.body.appendChild(container);
+
+
+		var info = document.createElement("div");//创建第二个元素，并且把它挂载到盒子元素中
+		info.style.position = "absolute";
+		info.style.top="10px";
+		info.style.width="100%";
+		info.style.textAlign = "center";
+		info.innerHTML = 'Drag to change the view';
+		container.appendChild(info);
+
+
+		camera = new THREE.PerspectiveCamera( 70, window.innerWidth/window.innerHeight, 1, 1000 );//创建摄像机
+		camera.position.y = 150;
+		camera.position.z = 500;
+
+
+		controls = new THREE.TrackballControls( camera);//漫游器设置，控制器
+
+		scene = new THREE.Scene();//创建场景
+
+		var light = new THREE.PointLight(0xffffff);//创建光线，并将光线加入到屏幕scene中
+		light.position.set(500,500,500);
+		scene.add(light);
+
+		sphere = new THREE.Mesh(new THREE.SphereGeometry(200,20,10),new THREE.MeshLambertMaterial());//创建球体并将球体添加到场景中
+		scene.add(sphere);
+
+		//plane
+		plane = new THREE.Mesh(new THREE.PlaneGeometry(400,400),new THREE.MeshLambertMaterial({color:0xe0e0e0}));//添加平面，并且将地平面添加到场景中
+		plane.position.y = -200;
+		plane.rotation.x = -Math.PI/2;
+		scene.add(plane);
+
+		renderer = new THREE.CanvasRenderer();//添加渲染器，并设置相关参数
+		renderer.setClearColor(0xf0f0f0);
+		renderer.setSize(width,height);
+
+		effect = new THREE.AsciiEffect(renderer);//引入ascii的效果，并设置效果影响的范围，最后追加到盒子中
+		effect.setSize(width,height);
+		container.appendChild(effect.domElement);
+
+		stats = new Stats();//备注stats是一个性能插件，实现的是性能分析,gui在打开的浏览器的左上角
+		container.appendChild(stats.dom);
+
+		//添加事件，窗口发生改变的时候调用
+		window.addEventListener('resize',onWindowResize,false);
+
+	}
+	function onWindowResize(){//浏览器窗体发生改变的时候，从新计算摄像机的aspect的宽高比，重新设置渲染的大小和效果的大小设置
+		camera.aspect = window.innerWidth / window.innerHeight;
+		camera.updateProjectionMatrix();//更新摄影机的投影
+		renderer.setSize(window.innerWidth,window.innerHeight);
+		effect.setSize(window.innerWidth,window.innerHeight);
+	}
+
+	//animation
+	function animate(){
+		requestAnimationFrame(animate);
+		stats.begin();//每一个frame性能分析开始
+		render();
+		stats.end();//每一个frame性能分析结束
+	}
+
+	//render
+	function render(){
+		var timer = Date.now()-start;
+		sphere.position.y = Math.abs(Math.sin(timer*0.002))*150;
+		sphere.rotation.x = timer* 0.0003;
+		sphere.rotation.z = timer*0.0002;
+		controls.update();
+		effect.render(scene,camera);
+	}
+	init();
+	animate();
+</script>
+</body>
+</html>
