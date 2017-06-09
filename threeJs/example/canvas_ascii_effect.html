@@ -96,14 +96,14 @@
 	}
 	function onWindowResize(){//浏览器窗体发生改变的时候，从新计算摄像机的aspect的宽高比，重新设置渲染的大小和效果的大小设置
 		camera.aspect = window.innerWidth / window.innerHeight;
-		camera.updateProjectionMatrix();//更新摄影机的投影
+		camera.updateProjectionMatrix();//更新摄影机的投影，防止浏览器伸缩放的过程中出现的变形等问题
 		renderer.setSize(window.innerWidth,window.innerHeight);
 		effect.setSize(window.innerWidth,window.innerHeight);
 	}
 
 	//animation
 	function animate(){
-		requestAnimationFrame(animate);
+		requestAnimationFrame(animate);//请求每一帧动画
 		stats.begin();//每一个frame性能分析开始
 		render();
 		stats.end();//每一个frame性能分析结束
