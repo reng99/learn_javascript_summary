@@ -134,7 +134,17 @@ module.exports = {
 
 ```
 
-完成上面的内容之后，就在控制台可以执行`npm run dev`的指令，这样的执行跟在控制台上面执行`webpack --config webpack.config.dev.js`得到的结果一模一样的了。很是神奇是吧，熟悉node开发的人应该知道这个`npm run dev`哈。
+完成上面的内容之后，就在控制台可以执行`npm run dev`的指令，这样的执行跟在控制台上面执行`webpack --config webpack.config.dev.js`得到的结果一模一样的了。很是神奇是吧，熟悉node开发的人应该知道这个`npm run dev`哈。如果你想实时监听文件的打包的话，需要改动`package.json`文件对应的`scripts`字段的字段如下：
+
+```json
+
+  ...
+  "scripts": {
+    "dev":"webpack --config webpack.config.dev.js --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+  ...
+
 
 4.页面更改为本地(localhost)执行
 
@@ -191,3 +201,9 @@ module.exports = {
 
 5.实现热加载
 
+
+在开发的过程中，文件的变化的话，应该带来浏览器的自动刷新，这样就不用手动去刷新浏览器查看效果，加快了开发的效率。
+
+自动刷新页面的话，就要在`webpack.config.js`中添加`.html`的模版了。需要使用到`html-webpack-plugin`。使用的步骤如下：
+
+5.1在控制台通过`npm install html-webpack-plugin --save-dev`
