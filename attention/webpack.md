@@ -156,3 +156,5 @@ module.exports = {
 ```
 
 通过`4.1 && 4.2`的修改，你可以在控制台上通过执行`npm run dev`。浏览器默认的监听的端口号是`8080`，此时，你在浏览器的url栏中输入`localhost:8080/static/index.html`或者`127.0.0.1:8080/static/index.html`就可以访问了。
+
+注意：此时不能够进行`webpack`将`entry`的index.js转换成为bundle.js了咯。
