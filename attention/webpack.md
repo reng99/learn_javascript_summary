@@ -207,3 +207,31 @@ module.exports = {
 自动刷新页面的话，就要在`webpack.config.js`中添加`.html`的模版了。需要使用到`html-webpack-plugin`。使用的步骤如下：
 
 5.1在控制台通过`npm install html-webpack-plugin --save-dev`
+
+5.2对`webpack.config.dev.js`的内容做下更改：
+
+```javascript
+
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+
+module.exports = {
+  ...
+  devServer:{
+    port:9000,//端口号
+    contentBase:path.join(__dirname,"dist"),//告诉服务器从哪来提供内容
+    publicPath:"/"
+  },
+  plugins:[
+    new HtmlWebpackPlugin({
+      template:'.static/index.html'//大包后的javascript自动绑定到模版中
+    })
+  ]
+  ...
+}
+
+```
+
+5.3执行"npm run dev"
+
+在浏览器上打开控制台上面提示的`localhost:9000`访问。修改`istatic/ndex.html`页面自动刷新，修改相关的`src/index.js `,不用刷新就可以查看相关的效果。到这里，webpack先告一段落了咯。
