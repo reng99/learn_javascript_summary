@@ -158,3 +158,36 @@ module.exports = {
 通过`4.1 && 4.2`的修改，你可以在控制台上通过执行`npm run dev`。浏览器默认的监听的端口号是`8080`，此时，你在浏览器的url栏中输入`localhost:8080/static/index.html`或者`127.0.0.1:8080/static/index.html`就可以访问了。
 
 注意：此时不能够进行`webpack`将`entry`的index.js转换成为bundle.js了咯。
+
+有个问题，如果你是在本地中打开了多个项目的话，就会产生端口上的冲突，因为默认的端口号是8080。
+
+下面给出两个更改端口的方案：
+
+- 在`package.json`的字段`scripts`里面添加，
+
+```json
+  ...
+  "scripts": {
+    "dev":"webpack-dev-server --config webpack.config.dev.js --port 6066",//更改端口号
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  ...
+
+```
+
+- 在`webpack.config.dev.js`中进行修改,
+
+```javascript
+
+    ...
+    devServer:{
+        port:9000,//更改监听的端口号，默认的端口号是8080
+    }
+    ...
+
+```
+
+上面提供的两种更改端口号的方法你可以根据个人喜好来用，个人比较喜欢第二种，和 `devServer`字段放在 一起比较好管理哈（后期这个字段会增加内容的，详情请接着往下看哦）
+
+5.实现热加载
+
