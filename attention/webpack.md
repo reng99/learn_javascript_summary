@@ -38,7 +38,7 @@
 
 ```javascript
 
-console.log("reng");
+console.log("webpack demo");
 
 ```
 
@@ -85,7 +85,7 @@ module.exports = {
 
 ```
 
-经过上面的三个步骤之后，你可以打开`static`下面的文件`index.html`，并在浏览器上运行。结果是；`在浏览器的控制台下面看到 "reng" 的文字`。
+经过上面的三个步骤之后，你可以打开`static`下面的文件`index.html`，并在浏览器上运行。结果是；`在浏览器的控制台下面看到 "webpack demo" 的字`。
 
 3.更改webpack.config.js为webpack.config.dev.js
 
@@ -148,7 +148,7 @@ module.exports = {
 
 4.页面更改为本地(localhost)执行
 
-细心的人儿应该发现了在浏览器上面浏览的地址是酱紫的呢--`file:///Users/reng/Desktop/webpack-demo/static/index.html`。如果我们要发给同一个局域网的人看（在团队项目中开发好的东西还是得让人家设计啊验证一下子的啦），那咋办呢。这就使用到了`webpack-dev-server`了呢。
+细心的人儿应该发现了在浏览器上面浏览的地址是酱紫的呢--`file:///Users/reng/Desktop/webpack-demo/static/index.html`。如果我们要通过localhost（127.0.0.1）来查看，那咋办呢。这就使用到了`webpack-dev-server`了呢。
 
 4.1首先安装一下相关的依赖:`npm install --save-dev webpack-dev-server`
 
