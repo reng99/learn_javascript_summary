@@ -87,7 +87,7 @@ body{
 
  完成上面的两个步骤之后，执行`npm run dev`，可以在浏览器中查看到下面的截图效果，背景图已经被加载出来了--
  
- <a id="original_font"></a>
+ #### 查看字体差别锚点
 
  ![webpakc_intro](./assets/imgs/webpack_intro.jpg)
 
@@ -231,7 +231,7 @@ body{
 
 ![modify_font_style](./assets/imgs/modify_font_style.jpg)
 
-也许你看不出和之前没添加字体（默认）的文字的区别，你可以点击[原文字效果](#original_font)查看！
+也许你看不出和之前没添加字体（默认）的文字的区别，你可以点击[原文字效果](#查看字体差别锚点)查看！
 
 至此，本文章也就接近尾声了，本文章介绍到的内容的示例的项目为[webpack_demo_extend02](./webpack_demo_extend02/),文章中讲到的目录也请参考刚才的那个链接。如果你感兴趣的话，可以将这个示例项目[webpack_demo_extend02](./webpack_demo_extend02/)下载下来运行哦。
 
