@@ -208,6 +208,8 @@ module.exports = {
 
 5.1在控制台通过`npm install html-webpack-plugin --save-dev`
 
+html-webpack-plugin插件，这个插件可以创建html文件，并自动将依赖写入html文件中。
+
 5.2对`webpack.config.dev.js`的内容做下更改：
 
 ```javascript
