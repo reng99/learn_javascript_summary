@@ -33,8 +33,6 @@ body{
 
 在改动之口，我执行`npm run dev`之后，得到浏览器的截图如下：
 
-<a id="original_font"></a>
-
 ![starry sky](./assets/imgs/starry_sky.jpg)
 
 咦，很神奇，是吧，背景图已经导进去了啊，拿还讲个啥。可以，你留意到`background:url('https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1510363862,3286190187&fm=26&gp=0.jpg') no-repeat;`，它的url是一个cdn的链接。如果换成本地的图片链接会怎样呢？
@@ -88,6 +86,8 @@ body{
  ```
 
  完成上面的两个步骤之后，执行`npm run dev`，可以在浏览器中查看到下面的截图效果，背景图已经被加载出来了--
+ 
+ <a id="original_font"></a>
 
  ![webpakc_intro](./assets/imgs/webpack_intro.jpg)
 
