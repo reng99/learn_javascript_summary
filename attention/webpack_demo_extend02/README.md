@@ -8,3 +8,5 @@
 
 执行完上面的代码之后，就会在浏览器中相关的url上看到下面这张图的效果：
 
+![webpack_demo_extend02](../assets/imgs/modify_font_style.jpg)
+
