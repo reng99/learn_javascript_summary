@@ -1,4 +1,4 @@
-## webpack 的延伸 01
+## webpack 的延伸 01 :blush:
 
 如果你还没有阅读过我的第一篇关于webpack的文章[webpack.md](./webpack.md)，那么你可以前往阅读。在webpack中我主要是实现了下面的几点：
 
@@ -7,6 +7,8 @@
 - 实现用ip地址（127.0.0.1）localhost访问
 
 - 实现热加载
+
+**提示:**在[webpack_demo](./webpack_demo/)目录的基础上实现
 
 本文档实现：
 
@@ -298,7 +300,7 @@ body p{
 
 ```
 
-不过个人还是喜欢用`less预处理器`来写样式哈，好处就不用多说了。
+不过个人还是喜欢用`less预处理器`来写样式哈，好处就不用多说了。本文档最终的项目结构请参考--[webpack_demo_extend01](./webpack_demo_extend01/)
 
 如果你感兴趣的话，可以将本文档用到的示例项目下载在本地进行运行哦。[webpack_demo_extend01](./webpack_demo_extend01/)
 
