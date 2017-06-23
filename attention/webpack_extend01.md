@@ -146,3 +146,156 @@ console.log(point.toString());
 
 当完成上面的配置之后，执行`npm run dev`你就浏览`localhost:9000`，然后发现整个页面的背景颜色已经变红色了。
 
+3.实现less(sass同理)的支持
+
+在实现支持`less`功能之前，先在`src/`文件夹的下面新建一个`index.less`文件，并在此文件里面实现改变`static/index.html`中`p`标签文字颜色的功能，将它的颜色改为白色。
+
+```less
+
+@white:#fff;
+body{
+    p{
+        color:@white;
+    }
+}
+
+```
+
+新建好文件后，在`src/index.js`中引入这个文件，实现如下:
+
+```javascript
+
+require('./index.less');//引入.less文件
+
+...
+
+
+```
+
+具体实现如下：
+
+3.1安装相关依赖--‘style-loader && css-loader && less-loader’
+
+对了，像第二点一样，安装个浏览器的兼容的依赖`autoprefixer-loader`。
+
+在第二点实现css支持的时候，已经安装了了`style-loader && css-loader && autoprefixer-loader`。在这些基础上安装`less-loader`就行了。
+
+打开控制台，在根目录下执行`npm install --save-dev less-loader`
+
+3.2添加less加载器
+
+进入`webpack.config.dev.js`中，添加相关的less支持：
+
+```javascript
+
+    ...
+    module:{
+        rules:[
+            {// 处理js-es6的规则
+                test:/\.js$/,//处理的文件的后缀名
+                use:['babel-loader'],//处理的加载器是loader
+                include:path.join(__dirname,'src')//包含的路径
+            },
+            {//处理css的规则
+                test:/\.css$/,
+                use:[
+                    {loader:'style-loader'},//style-loader 和 css-loader 的顺序是不能够颠倒的
+                    {
+                        loader:'css-loader',
+                        // options:{
+                        //     modules:true
+                        // }
+                    },
+                    {loader:'autoprefixer-loader'}
+                ]
+            },
+            {//处理less的规则
+                test:/\.less$/,
+                use:[
+                    {loader:'style-loader'},//四者的顺序不能调换的哦
+                    {loader:'css-loader'},
+                    {loader:'autoprefixer-loader'},
+                    {loader:'less-loader',options:{modules:true}},  
+                ]
+            }
+        ]
+    }
+    ...
+
+```
+
+记得哦，处理`less`规则的四个`loader`的顺序不能够乱哦，不信请自行下载项目--[webpack_demo_extend01](./webpack_demo_extend01/)来运行验证下咯。
+
+3.3运行查看效果
+
+在项目的根目录中执行`npm run dev`就可以在`localhost:9000`看到文字的颜色变成了白色。效果如截图：
+
+![paragrah-white](./assets/imgs/webpack_demo_extend01.png)
+
+啊哈，也许你发现了，在`webpack.config.dev.js`中实现的`less && css`的代码是重复了一大推呢，是吧。其实，我们可以简化一下的不止是这个文件呢，下面来简化下，使得实现的功能一样一样的。
+
+- 去掉`src/index.css`文件
+
+- 去掉`src/index.js`文件中的`.css`的引用`require('./index.css');`
+
+- 更改`src/index.less`文件，如下:
+
+```less
+
+@white:#fff;
+@red:red;
+body{
+    background:@red;
+    p{
+        color:@white;
+    }
+}
+
+```
+
+- 更改`webpack.config.dev.js`中的`module`字段，如下：
+
+```javascript
+
+    ...
+    module:{
+        rules:[
+            {// 处理js-es6的规则
+                test:/\.js$/,//处理的文件的后缀名
+                use:['babel-loader'],//处理的加载器是loader
+                include:path.join(__dirname,'src')//包含的路径
+            },
+            {//处理css的规则,处理less的规则
+                test:/\.css$/,
+                use:[
+                    {loader:'style-loader'},//style-loader 和 css-loader 的顺序是不能够颠倒的
+                    {
+                        loader:'css-loader',
+                        // options:{
+                        //     modules:true
+                        // }
+                    },
+                    {loader:'autoprefixer-loader'},
+                    {loader:'less-loader'},
+                ]
+            }
+        ]
+    }
+    ...
+
+```
+
+更改之后，你可以看到最终的效果是一模一样的呢，对了，在`src/index.less`文件中我是用`.less`的语法实现的，其实你全部都用`.css`的语法写，效果也是一样的。可以改成下面这样--
+
+```css
+
+body{
+    background:red;
+}
+body p{
+    color:#fff;
+}
+
+```
+
+不过个人还是喜欢用`less预处理器`来写样式哈，好处就不用多说了。
