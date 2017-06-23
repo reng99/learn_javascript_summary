@@ -234,6 +234,8 @@ module.exports = {
 
 ```
 
+最终文档描述的项目的结构请见：[webpack-demo](./webpack-demo/)
+
 5.3执行"npm run dev"
 
 在浏览器上打开控制台上面提示的`localhost:9000`访问。修改`istatic/ndex.html`页面自动刷新，修改相关的`src/index.js `,不用刷新就可以查看相关的效果。到这里，webpack先告一段落了咯。
