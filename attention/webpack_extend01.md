@@ -266,7 +266,7 @@ body{
                 include:path.join(__dirname,'src')//包含的路径
             },
             {//处理css的规则,处理less的规则
-                test:/\.css$/,
+                test:/\.less$/,
                 use:[
                     {loader:'style-loader'},//style-loader 和 css-loader 的顺序是不能够颠倒的
                     {
