@@ -237,3 +237,5 @@ module.exports = {
 在浏览器上打开控制台上面提示的`localhost:9000`访问。修改`istatic/ndex.html`页面自动刷新，修改相关的`src/index.js `,不用刷新就可以查看相关的效果。到这里，webpack先告一段落了咯。
 
 你可以到[这里](./webpack-demo/)查看本webpack文档涉及到的整个项目，感兴趣的话可以将那个项目下载下来，在本地上运行运行哦！:blush:
+
+延伸的内容和本文档有继承和被继承的关系（本文档）延伸的地址[webpack_extend01](./webpack_extend01.md)
