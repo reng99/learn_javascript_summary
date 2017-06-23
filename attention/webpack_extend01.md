@@ -8,7 +8,7 @@
 
 - 实现热加载
 
-**提示:**在[webpack_demo](./webpack_demo/)目录的基础上实现
+**提示** 在[webpack_demo](./webpack_demo/)目录的基础上实现
 
 本文档实现：
 
