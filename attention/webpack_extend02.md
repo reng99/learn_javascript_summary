@@ -233,5 +233,9 @@ body{
 
 也许你看不出和之前没添加字体（默认）的文字的区别，你可以点击[原文字效果](#original_font)查看！
 
+至此，本文章也就接近尾声了，本文章介绍到的内容的示例的项目为[webpack_demo_extend02](./webpack_demo_extend02/),文章中讲到的目录也请参考刚才的那个链接。如果你感兴趣的话，可以将这个示例项目[webpack_demo_extend02](./webpack_demo_extend02/)下载下来运行哦。
+
+拜拜！:blush:
+
 
 
