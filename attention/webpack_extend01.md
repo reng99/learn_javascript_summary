@@ -304,4 +304,4 @@ body p{
 
 如果你感兴趣的话，可以将本文档用到的示例项目下载在本地进行运行哦。[webpack_demo_extend01](./webpack_demo_extend01/)
 
-由于篇幅的问题，本文件所讲的内容就是这些了，如果喜欢，可以观看我下一次的延伸的内容哦:blush:
+由于篇幅的问题，本文件所讲的内容就是这些了，如果喜欢，可以观看我下一次的延伸的内容--[webpack_extend02](./webpack_extend02.md)哦:blush:
