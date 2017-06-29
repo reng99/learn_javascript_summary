@@ -42,7 +42,7 @@ webpack 默认是不支持`javascript es6`的语法的，但是使用es6语法�
 
 你也可以一次性安装这些`npm install --save-dev babel-core babel-loader babel-plugin-transform-runtime babel-preset-es2015 babel-preset-stage-2 babel-runtime`，网速差的建议一个个安装吧。
 
-1.2 添加`.babelrc`文件，内容如下
+1.2 添加`.babelrc`文件，内容如下（忽略本步骤，添加进去项目运行出错，正在改动）
 
 ```json
 
