@@ -12,30 +12,32 @@ module.exports = {
         publicPath:'/',//值是string类型，对于加载（on-demand-load）或加载外部资源(external resources)（如图片、文件等）来说
         //output.publicPath是很重要的选项。如果指定了一个错误的值，则在加载这些资源的时候会收到404错误
     },
-    devServer:{
-        port:9000,//监听的端口号
-        contentBase:path.join(__dirname,'dist'),// 告诉服务器从哪来提供内容
-        publicPath:'/',//此路径下的打包文件可在浏览器中访问
+    devServer:{//通过来自「webpack-dev-server」的这些选项，能够通过多种方式改变其行为。
+        port:9000,//指定监听的端口号
+        contentBase:path.join(__dirname,'dist'),// 告诉服务器从哪来提供内容。只有在你想要提供静态文件时才需要。
+        publicPath:'/',//用于确定从哪里提供bundle，并且此选项优先
+        compress:true,//一切服务都启用「gzip」压缩
+        //quiet:true,//除了初始化启动信息之外的任何内容都不会被打印到控制台。这也就意味着来自webpack的错误或警告在控制台不可见
     },
-    plugins:[
+    plugins:[//插件，具体的内容可以查看链接 -- https://doc.webpack-china.org/plugins/
         new HtmlWebpackPlugin({
             template:'./static/index.html'
         })
     ],
-    module:{
-        rules:[
+    module:{ //处理项目中的不同的模块
+        rules:[//格式array,创建模块时，匹配请求的规则数组。这些规则能够对修改模块的创建方式。这些规则能够对（module）应用loader，或修改解析器（parser）
             {// 处理js-es6的规则
-                test:/\.js$/,//处理的文件的后缀名
-                use:['babel-loader'],//处理的加载器是loader
-                include:path.join(__dirname,'src')//包含的路径
+                test:/\.js$/,//匹配资源，处理的文件的后缀名
+                use:['babel-loader'],//每个入口（entry）指定使用一个loader，处理的加载器是loader
+                include:path.join(__dirname,'src')//包含的路径（匹配特定条件）
             },
             {//处理css的规则,处理less的规则
                 test:/\.less$/,
-                use:[
+                use:[//use的别名--loaders
                     {loader:'style-loader'},//style-loader 和 css-loader 的顺序是不能够颠倒的
                     {
-                        loader:'css-loader',
-                        // options:{
+                        loader:'css-loader',//使用loader来解析选项
+                        // options:{//loader的选项
                         //     modules:true
                         // }
                     },
