@@ -1,6 +1,6 @@
 ## 分离js和css
 
-- 问题描述
+**1.问题描述**
 
 在进行对项目转移到生产环境的时候，也就是在配置好路径进行`npm run build `的过程中，生成的ouput文件*.js。现在是要将这个*.js分离成为js在js文件夹中的.js文件中，而css(包括less|sass)在css的文件夹中。实现下面如下面的目录：
 
@@ -34,7 +34,7 @@
     
 ```
 
-- 问题解决方案
+**2.问题解决方案**
 
 [参考链接](https://doc.webpack-china.org/plugins/extract-text-webpack-plugin/)    
 
