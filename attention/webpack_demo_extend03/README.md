@@ -8,18 +8,10 @@
 
 执行完上面的代码之后，就会在浏览器中相关的url上看到下面这张图的效果：
 
+![webpack_demo_extend02](../assets/imgs/modify_font_style.jpg)
 
-**注意点**
 
-实现声场环境
+## 新的注意的点
 
-3.npm run build
-
-在`实施生产环境之前，需要注意⚠️`
-
-将`图片和字体`资源单独放置[参考](../wepack的踩坑记录/坑1_分离images和fonts.md)
-
-使用extrat-text-webpack-plugin将css 分离开来，放到独立的文件夹中[参考](../wepack的踩坑记录/坑2_分离js和css.md)
-
-修改样式中的图片和字体的路径[参考](../wepack的踩坑记录/坑3_prod下样式图片出错.md
-
+optimize-css-assets-webpack-plugin
+这个插件一般是和extract-text-webpack-plugin 使用，因为前一个插件式解决后者在复制的过程的问题。[链接](https://npm.taobao.org/package/optimize-css-assets-webpack-plugin)

@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
     entry:{//string|object|array,起点或者是应用程序的起点入口。从这个起点开始，应用程序启动执行。如果传递一个数组，那么数组的每一项都会执行
@@ -32,8 +33,14 @@ module.exports = {
             filename:(getPath)=>{
                 return getPath('css/[name].css').replace('css/js', 'css');//将入口文件的.css/.less文件从输出的.js文件转换成.css文件
             },
+            disable:false,//禁用插件为false
             allChunks:true
         }),
+        new OptimizeCssAssetsPlugin({//对生产环境的css进行压缩
+            cssProcessorOptions:{
+                safe:true
+            }
+        })
     ],
     module:{ //处理项目中的不同的模块
         rules:[//格式array,创建模块时，匹配请求的规则数组。这些规则能够对修改模块的创建方式。这些规则能够对（module）应用loader，或修改解析器（parser）
