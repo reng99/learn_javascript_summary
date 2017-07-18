@@ -16,9 +16,9 @@
 
 在实施生产环境之前，需要注意⚠️
 
-将图片和字体资源单独放置参考
+将图片和字体资源单独放置[参考](../wepack的踩坑记录/坑1_分离images和fonts.md)
 
-使用extrat-text-webpack-plugin将css 分离开来，放到独立的文件夹中参考
+使用extrat-text-webpack-plugin将css 分离开来，放到独立的文件夹中[参考](../wepack的踩坑记录/坑2_分离js和css.md)
 
 修改样式中的图片和字体的路径[参考](../wepack的踩坑记录/坑3_prod下样式图片出错.md)
 
