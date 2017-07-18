@@ -8,7 +8,7 @@
 
 ```javascript
 	
-	...
+    ...
     entry:[//string|object|array,起点或者是应用程序的起点入口。从这个起点开始，应用程序启动执行。如果传递一个数组，那么数组的每一项都会执行
         '../src/js/index.js',
         '../src/less/index.less',
@@ -24,21 +24,23 @@
 
 因为entry里面的路径是相对于`package.json`的，因为每次进行`npm run dev || npm run build`的时候，执行的是`package.json`文件，入口的路径是以这个文件为根。
 
-```json
-
+```javascript
+  
+  ...
   "scripts": {
     "dev": "webpack-dev-server --config ./build/webpack.config.dev.js",
     "build": "webpack --config ./build/webpack.config.prod.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-
+  ...
+  
 ```
 
 所以，要注重引入的entry路径,要改成下面的这种路径：
 
-```json
+```javascript
 
-	...
+    ...
     entry:[//string|object|array,起点或者是应用程序的起点入口。从这个起点开始，应用程序启动执行。如果传递一个数组，那么数组的每一项都会执行
         './src/js/index.js',
         './src/less/index.less',
