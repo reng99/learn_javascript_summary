@@ -1,0 +1,15 @@
+{
+  "name": "http_reptile",
+  "version": "1.0.0",
+  "description": "this is the http reptile",
+  "main": "index.js",
+  "scripts": {
+    "start":"node index.js"
+  },
+  "keywords": ["node"],
+  "author": "reng",
+  "license": "ISC",
+  "devDependencies": {
+    "cheerio": "^1.0.0-rc.2"
+  }
+}
