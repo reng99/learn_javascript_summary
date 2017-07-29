@@ -26,6 +26,10 @@ $ npm run start 或者 npm index.js
 ![data](./data.png)
 
 
+## 爬取https
+
+爬取https和爬取http页面类似，可以自行参考http_reptile来爬取[github官网](https://github.com/)
+
 ## 数据出错情况
 
 - 爬取的网站url失效

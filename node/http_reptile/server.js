@@ -1,8 +1,10 @@
-var http = require("http"),
+var http = require("http"),//var https = require("https");为爬取https协议的模块输入
  cheerio = require("cheerio");//类似jquery
 
 
  var url = "http://www.kjzxfw.com/ia/guangdong/zcxx.html";
+
+ // var url = "https://github.com/";
 
  function filterChapters(html){
      var $ = cheerio.load(html);
