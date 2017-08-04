@@ -36,6 +36,14 @@
 - [http_reptile 小爬虫](./http_reptile/)
 
 
+## node技巧
+
+**1.更新node到最新版本**
+
+执行`sudo n stable` （mac） --> 就是一条命令行搞定 :blush:
+
+你可以通过 `node -v` 查看当前的版本
+
 
 
 
