@@ -18,6 +18,8 @@
 
 - [vuejs mvvm框架](./vuejs/)
 
+- [typescript](./typescript/)
+
 - [学习文档汇集(document)](./document/)
 
 
