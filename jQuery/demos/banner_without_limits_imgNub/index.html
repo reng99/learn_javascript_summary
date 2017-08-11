@@ -1,0 +1,208 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>banner_without_limit_images_numbers</title>
+    <style>
+        body,ul{
+            margin:0;
+            padding:0;
+        }
+        #carousel{
+            min-width:800px;
+            width:100%;
+            height:0;
+            overflow: hidden;
+            position: relative;
+        }
+         .container{
+            height:auto;
+        } 
+        img{
+            height:auto;
+            display:block;
+            float: left;
+        }
+        
+        #prev,#next{
+            width:40px;
+            height:40px;
+            position: absolute;
+            top:50%;
+            color:#fff;
+            background:#999;
+            margin-top:-20px;
+            border-radius:20px;
+            text-align:center;
+            line-height: 40px;
+        }
+        #prev{
+            margin-bottom:30px;
+            left:6%;
+        }
+        #next{
+            right:6%;
+        }
+        #prev:hover,#next:hover{
+            cursor:pointer;
+        }
+        #order{
+            width:100%;
+            height:10px;
+            text-align: center;
+            position:absolute;
+            bottom:10px;
+        }
+        #order ul{
+            /* 这里的width是通过javascript获取，达到居中的效果 */
+            height:10px;
+            margin:0 auto;
+            text-align:center;
+        }
+        #order ul li{
+            width:10px;
+            height:10px;
+            list-style: none;
+            background: #dedede;
+            border-radius: 5px;
+            float: left;
+            margin-right:10px;
+        }
+        #order ul li:last-child{
+            margin-right:0;
+        }
+        #order ul li:hover{
+            cursor:pointer;
+        }
+        #order ul .active{
+            width:20px;
+            background:#fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="carousel">
+        <div class="container">
+            <img src="./imgs/1.jpg" alt="1">
+            <img src="./imgs/2.jpg" alt="2">
+            <img src="./imgs/3.jpg" alt="3">
+            <img src="./imgs/2.jpg" alt="2">
+            <img src="./imgs/1.jpg" alt="1">
+            <img src="./imgs/3.jpg" alt="3">
+        </div>
+            <div id="prev">&lt;</div>
+            <div id="next">&gt;</div>
+            <div id="order">
+                <ul>
+                    <!-- 这里的li标签的数量需要对应图片的数量 -->
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+    </div>
+
+
+
+    <script src="../../lib/jquery-3.2.1.min.js"></script>
+    <script>
+    (function(){
+        //变量的定义
+        var curIndex = 0;//当前的索引，显示索引的图片和标志的选中的样式
+        var distance = -100;//移动的距离,这里是百分比%
+        var autoTimeInterval = 4000;//自动播放的时间间隔
+        var timer = null;//定时器
+
+        //设置相关的现实
+        var container = $("#carousel .container");
+        var imgs = $("#carousel .container img");
+        var len = imgs.length;
+        container.css('width',100*len+'%');
+        imgs.css('width',100/len+'%');
+        $("#carousel").css('height','auto');
+
+        var ul_width = 20*len+'px';
+        $("#order ul").css("width",ul_width);
+
+        var lis = $("#order ul li");
+
+        // 下面是具体的实现
+        autoSlide();
+        function autoSlide(){
+            clearInterval(timer);
+            timer = setInterval(function(){
+                slide(curIndex);
+            },autoTimeInterval);
+        }
+        function slide(_index,dir){//如果dir为left的话，就回滚，默认事right，不传参数
+            let nextIndex = dir=='left'?_index-1:_index+1;
+            if(nextIndex != len&&nextIndex!=-1){
+                container.animate({
+                    marginLeft:distance*nextIndex+'%'
+                });
+                curIndex = nextIndex;
+            }else{
+                if(dir=='left'){
+                    curIndex = len-1;
+                }else{
+                    curIndex = 0;
+                }
+                container.animate({
+                    marginLeft:distance*curIndex+'%'
+                });
+            }
+            lisStyle(curIndex);
+        }
+        
+        // 下一张图片
+        $("#next").mouseenter(function(){
+            clearInterval(timer);
+            $(this).unbind('click').click(function(){//每次点击的时候先取消上次的点击事件
+                slide(curIndex);
+                lisStyle(curIndex);
+                console.log(curIndex);
+            })
+        })
+        $("#next").mouseleave(function(){
+            autoSlide();
+        })
+
+        //上一张图片
+        $("#prev").mouseenter(function(){
+            clearInterval(timer);
+            $(this).unbind('click').click(function(){
+                slide(curIndex,'left');
+                lisStyle(curIndex);
+                console.log(curIndex);
+            });
+            
+        })
+        $("#prev").mouseleave(function(){
+            autoSlide();
+        })
+
+        lisStyle(0);//默认事第一张图片，所以是第一个标志设为活动
+        //lis active的样式
+        function lisStyle(_index){
+            lis.eq(_index).addClass('active').siblings().removeClass('active');//添加样式
+        }
+
+        //点击标志实现跳转
+        $("#order ul").mouseenter(function(){
+            clearInterval(timer);
+            lis.unbind('click').click(function(){
+                curIndex = $(this).index();
+                slide(curIndex-1);
+            });
+        });
+        $("#order ul").mouseleave(function(){
+            autoSlide();
+        })
+    })();
+    </script>
+</body>
+</html>
