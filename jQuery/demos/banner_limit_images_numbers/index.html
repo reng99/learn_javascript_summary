@@ -1,0 +1,199 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body,ul{
+            margin:0;
+            padding:0;
+        }
+        #carousel{
+            min-width:800px;
+            width:100%;
+            height:auto;
+            overflow: hidden;
+            position: relative;
+        }
+         .container{
+            width:300%;/* 改动点一： 轮播为三张图，为300%。如果是四张图就为400%，以此类推 */
+            height:auto;
+        } 
+        img{
+            width:33.3%;/* 改动点二：轮播图为三张图，所以为100%／3，如果是四张图，为100%／4，以此类推 */
+            height:auto;
+            display:block;
+            float: left;
+        }
+        
+        #prev,#next{
+            width:40px;
+            height:40px;
+            position: absolute;
+            top:50%;
+            color:#fff;
+            background:#999;
+            margin-top:-20px;
+            border-radius:20px;
+            text-align:center;
+            line-height: 40px;
+        }
+        #prev{
+            margin-bottom:30px;
+            left:6%;
+        }
+        #next{
+            right:6%;
+        }
+        #prev:hover,#next:hover{
+            cursor:pointer;
+        }
+        #order{
+            width:100%;
+            height:10px;
+            text-align: center;
+            position:absolute;
+            bottom:10px;
+        }
+        #order ul{
+            width:60px;/* 改动点三：限定的轮播的个数是三，如果轮播个数限制为4，width的值是80px，以此类推 */
+            height:10px;
+            margin:0 auto;
+            text-align:center;
+        }
+        #order ul li{
+            width:10px;
+            height:10px;
+            list-style: none;
+            background: #dedede;
+            border-radius: 5px;
+            float: left;
+            margin-right:10px;
+        }
+        #order ul li:last-child{
+            margin-right:0;
+        }
+        #order ul li:hover{
+            cursor:pointer;
+        }
+        #order ul .active{
+            width:20px;
+            background:#fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="carousel">
+        <div class="container">
+            <!-- 改动点四：轮播为三张图，有三个img标签，如果有四张图为四个img标签，以此类推 -->
+            <img src="../banner_without_limits_imgNub/imgs/1.jpg" alt="1">
+            <img src="../banner_without_limits_imgNub/imgs/2.jpg" alt="2">
+            <img src="../banner_without_limits_imgNub/imgs/3.jpg" alt="3">
+        </div>
+            <div id="prev">&lt;</div>
+            <div id="next">&gt;</div>
+            <div id="order">
+                <ul>
+                    <!-- 改动点五：有三张图，就有三个li标签，有四张图就有四个li标签，以此类推 -->
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+    </div>
+
+
+
+    <script src="../../lib/jquery-3.2.1.min.js"></script>
+    <script>
+        // js不需要做出改动
+    (function(){
+        //变量的定义
+        var curIndex = 0;//当前的索引，显示索引的图片和标志的选中的样式
+        var distance = -100;//移动的距离,这里是百分比%
+        var autoTimeInterval = 4000;//自动播放的时间间隔
+        var timer = null;//定时器
+
+        //设置相关的现实
+        var container = $("#carousel .container");
+        var imgs = $("#carousel .container img");
+        var len = imgs.length;
+        var lis = $("#order ul li");
+
+        // 下面是具体的实现
+        autoSlide();
+        function autoSlide(){
+            clearInterval(timer);
+            timer = setInterval(function(){
+                slide(curIndex);
+            },autoTimeInterval);
+        }
+        function slide(_index,dir){//如果dir为left的话，就回滚，默认事right，不传参数
+            let nextIndex = dir=='left'?_index-1:_index+1;
+            if(nextIndex != len&&nextIndex!=-1){
+                container.animate({
+                    marginLeft:distance*nextIndex+'%'
+                });
+                curIndex = nextIndex;
+            }else{
+                if(dir=='left'){
+                    curIndex = len-1;
+                }else{
+                    curIndex = 0;
+                }
+                container.animate({
+                    marginLeft:distance*curIndex+'%'
+                });
+            }
+            lisStyle(curIndex);
+        }
+        
+        // 下一张图片
+        $("#next").mouseenter(function(){
+            clearInterval(timer);
+            $(this).unbind('click').click(function(){//每次点击的时候先取消上次的点击事件
+                slide(curIndex);
+                lisStyle(curIndex);
+                console.log(curIndex);
+            })
+        })
+        $("#next").mouseleave(function(){
+            autoSlide();
+        })
+
+        //上一张图片
+        $("#prev").mouseenter(function(){
+            clearInterval(timer);
+            $(this).unbind('click').click(function(){
+                slide(curIndex,'left');
+                lisStyle(curIndex);
+                console.log(curIndex);
+            });
+            
+        })
+        $("#prev").mouseleave(function(){
+            autoSlide();
+        })
+
+        lisStyle(0);//默认事第一张图片，所以是第一个标志设为活动
+        //lis active的样式
+        function lisStyle(_index){
+            lis.eq(_index).addClass('active').siblings().removeClass('active');//添加样式
+        }
+
+        //点击标志实现跳转
+        $("#order ul").mouseenter(function(){
+            clearInterval(timer);
+            lis.unbind('click').click(function(){
+                curIndex = $(this).index();
+                slide(curIndex-1);
+            });
+        });
+        $("#order ul").mouseleave(function(){
+            autoSlide();
+        })
+    })();
+    </script>
+</body>
+</html>
