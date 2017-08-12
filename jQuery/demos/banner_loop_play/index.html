@@ -1,0 +1,214 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>循环banner播放</title>
+    <style>
+        body,ul{
+            margin:0;
+            padding:0;
+        }
+        #carousel{
+            width:100%;
+            height: auto;
+            margin:0 auto;
+            overflow: hidden;
+            position:relative;
+            min-width:800px;
+        }
+        .bd{
+            width:400%;
+            height:auto;
+            background:red;
+        }
+        ul li{
+            list-style: none;
+            width:25%;
+            height:auto;
+            float:left;
+        }
+        img{
+            width:100%;
+            height:auto;
+        }
+        .pre,.next{
+            width:40px;
+            height: 40px;
+            font-size:20px;
+            line-height: 40px;
+            text-align:center;
+            position: absolute;
+            border-radius:20px;
+            opacity:0.8;
+            background:#999;
+            top:50%;
+            margin-top:-20px;
+            display:none;
+        }
+        .pre .inner,.next .inner{
+            display: block;
+            width:40px;
+            height:45px;
+            transform:scale(1,2);
+            -ms-transform:scale(1,2);
+            -webkit-transform:scale(1,2);
+            -moz-transform:scale(1,2);
+            -o-transform:scale(1,2);
+        }
+        .pre:hover,.next:hover{
+            cursor:pointer;
+        }
+        .pre{
+            left:10%;
+        }
+        .next{
+            right:10%;
+        }
+        .hd{
+            width:60px;
+            height: 10px;
+            position:absolute;
+            bottom:10px;
+            left:50%;
+            margin-left:-30px;
+        }
+        .hd li{
+            width:10px;
+            height:10px;
+            border-radius: 5px;
+            background:#999;
+            margin-right:10px;
+        }
+        .hd li:hover{
+            cursor:pointer;
+        }
+        .hd li:last-child{
+            margin-right:0;
+        }
+        .hd .active{
+            width:20px;
+            background:#fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="carousel" class="carousel">
+        <ul class="bd">
+            <li>
+                <a href="javascript:void(0)"><img src="../banner_without_limits_imgNub/imgs/1.jpg" alt="1" /></a>
+            </li>
+            <li>
+                <a href="javascript:void(0)"><img src="../banner_without_limits_imgNub/imgs/2.jpg" alt="2" /></a>
+            </li>
+            <li>
+                <a href="javascript:void(0)"><img src="../banner_without_limits_imgNub/imgs/3.jpg" alt="3" /></a>
+            </li>
+        </ul>
+        <p class="pre"><span class="inner">&lt;</span></p>
+        <p class="next"><span class="inner">&gt;</span></p>
+        <ul class="hd">
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    
+
+
+    <script src="../../lib/jquery-3.2.1.min.js"></script>
+    <script>
+        (function(){
+            switchPos("carousel");
+            function switchPos(a){
+                var timer = null;//计时器
+                var curIndex = 0;//当前的展示层，默认是第一层
+                var duringTime = 5000;//轮播的时间
+                //var _marginLeft = -$("."+a+" .bd li:first").width();//左移的距离
+                var _marginLeft = -100;
+                
+                $("."+a+" .bd li:first").clone().appendTo("."+a+" .bd");//将第一层克隆放在最后
+
+                $("."+a+" .hd li").eq(curIndex).addClass("active").siblings().removeClass("active");//默认是第一个标志点
+                
+                slide();
+                function slide(){
+                    clearInterval(timer);
+                    timer = setInterval(function(){
+                        autoSlide();
+                    },duringTime)
+                }
+
+                function autoSlide(){
+                    if(curIndex < $("."+a+" .bd li").length - 2){
+                        curIndex++;
+                        $("."+a+ " .bd").animate(
+                            {
+                                "marginLeft":_marginLeft * curIndex+"%"
+                            },
+                            "slow"
+                        );
+                    }else{
+                        $("."+a+" .bd").animate(
+                            {
+                                marginLeft:_marginLeft * ($("."+a+" .bd li").length-1)+"%"
+                            },
+                            "slow",
+                            function(){
+                                $("."+a+" .bd").css("marginLeft",0);
+                            }
+                        );
+                        curIndex = 0;
+                    }
+                    $("."+a+" .hd li").eq(curIndex).addClass("active").siblings().removeClass("active");
+                };
+
+                $("."+a).mouseenter(function(){
+                    $("."+a+" .pre").css("display","block");
+                    $("."+a+" .next").css("display","block");
+                });
+                $("."+a).mouseleave(function(){
+                    $("."+a+" .pre").css("display","none");
+                    $("."+a+" .next").css("display","none");
+                });
+
+                $("."+a+" .next").click(function(){//下一张
+                    autoSlide();
+                    slide();
+                });
+                $("."+a+" .pre").click(function(){//上一张
+                    if(curIndex > 0){
+                        curIndex--;
+                        $("."+a+" .bd").animate({
+                            "marginLeft":_marginLeft*curIndex+"%"
+                        },
+                        "slow"
+                        );
+                    }else{
+                        $("."+a+" .bd").css("marginLeft",_marginLeft * ($("."+a+" .bd li").length-1)+"%");
+                        curIndex = $("."+a+" .bd li").length - 2;
+                        $("."+a+" .bd").animate({
+                            "marginLeft":_marginLeft*curIndex+"%"
+                        },
+                        "slow"
+                        );
+                    }
+                    $("."+a+" .hd li").eq(curIndex).addClass("active").siblings().removeClass("active");
+                    slide();
+                });
+
+                $("."+a+" .hd li").mouseenter(function(){//点击标记点切换
+                    $(this).addClass("active").siblings().removeClass("active");
+                    curIndex = $(this).index();
+                    $("."+a+" .bd").animate({
+                        "marginLeft":_marginLeft*curIndex+"%"
+                    },
+                    "slow"
+                    );
+                    slide();
+                })
+            }
+        })()
+    </script>
+</body>
+</html>
