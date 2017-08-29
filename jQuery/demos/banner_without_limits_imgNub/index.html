@@ -141,7 +141,7 @@
         function slide(_index,dir){//如果dir为left的话，就回滚，默认事right，不传参数
             let nextIndex = dir=='left'?_index-1:_index+1;
             if(nextIndex != len&&nextIndex!=-1){
-                container.animate({
+                container.stop().animate({
                     marginLeft:distance*nextIndex+'%'
                 });
                 curIndex = nextIndex;
@@ -151,7 +151,7 @@
                 }else{
                     curIndex = 0;
                 }
-                container.animate({
+                container.stop().animate({
                     marginLeft:distance*curIndex+'%'
                 });
             }

@@ -142,14 +142,14 @@
                 function autoSlide(){
                     if(curIndex < $("."+a+" .bd li").length - 2){
                         curIndex++;
-                        $("."+a+ " .bd").animate(
+                        $("."+a+ " .bd").stop().animate(
                             {
                                 "marginLeft":_marginLeft * curIndex+"%"
                             },
                             "slow"
                         );
                     }else{
-                        $("."+a+" .bd").animate(
+                        $("."+a+" .bd").stop().animate(
                             {
                                 marginLeft:_marginLeft * ($("."+a+" .bd li").length-1)+"%"
                             },
@@ -179,7 +179,7 @@
                 $("."+a+" .pre").click(function(){//上一张
                     if(curIndex > 0){
                         curIndex--;
-                        $("."+a+" .bd").animate({
+                        $("."+a+" .bd").stop().animate({
                             "marginLeft":_marginLeft*curIndex+"%"
                         },
                         "slow"
@@ -187,7 +187,7 @@
                     }else{
                         $("."+a+" .bd").css("marginLeft",_marginLeft * ($("."+a+" .bd li").length-1)+"%");
                         curIndex = $("."+a+" .bd li").length - 2;
-                        $("."+a+" .bd").animate({
+                        $("."+a+" .bd").stop().animate({
                             "marginLeft":_marginLeft*curIndex+"%"
                         },
                         "slow"
@@ -200,7 +200,7 @@
                 $("."+a+" .hd li").mouseenter(function(){//点击标记点切换
                     $(this).addClass("active").siblings().removeClass("active");
                     curIndex = $(this).index();
-                    $("."+a+" .bd").animate({
+                    $("."+a+" .bd").stop().animate({
                         "marginLeft":_marginLeft*curIndex+"%"
                     },
                     "slow"
