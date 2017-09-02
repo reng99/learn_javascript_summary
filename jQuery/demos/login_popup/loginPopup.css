@@ -1,0 +1,286 @@
+#loginPopup {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+}
+#loginPopup .layer {
+  opacity: 0.5;
+  background: #999;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#loginPopup .container {
+  position: absolute;
+  top: 100px;
+  width: 320px;
+  height: auto;
+  background: #fff;
+  padding: 20px 30px;
+}
+#loginPopup .container .tabs {
+  height: 65px;
+  font-size: 24px;
+  margin-bottom: 30px;
+  position: relative;
+}
+#loginPopup .container .tabs li {
+  float: left;
+  width: 160px;
+  height: 64px;
+  line-height: 64px;
+  border-bottom: 1px solid #e8e8e8;
+  text-align: center;
+  color: #666;
+}
+#loginPopup .container .tabs li.active {
+  border-bottom: 1px solid #09dbc6;
+  color: #09dbc6;
+}
+#loginPopup .container .tabs li:hover {
+  cursor: pointer;
+}
+#loginPopup .container .tabs .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  color: #666;
+  font-style: normal;
+}
+#loginPopup .container .tabs .close:hover {
+  cursor: pointer;
+}
+#loginPopup .container .content .pswLogin li.username,
+#loginPopup .container .content .pswLogin li.password {
+  width: 320px;
+  height: 70px;
+  position: relative;
+}
+#loginPopup .container .content .pswLogin li.username input,
+#loginPopup .container .content .pswLogin li.password input {
+  height: 38px;
+  width: 320px;
+  padding-left: 38px;
+  border: 1px solid #e8e8e8;
+}
+#loginPopup .container .content .pswLogin li.username .err_msg,
+#loginPopup .container .content .pswLogin li.password .err_msg {
+  color: #f00;
+  font-size: 12px;
+  margin-top: 4px;
+  padding-left: 16px;
+  height: 16px;
+  line-height: 16px;
+}
+#loginPopup .container .content .pswLogin li.username .clear,
+#loginPopup .container .content .pswLogin li.password .clear {
+  width: 20px;
+  height: 20px;
+  display: block;
+  position: absolute;
+  top: 9px;
+  right: 9px;
+  background: url(./images/login_clear.png) no-repeat center center;
+}
+#loginPopup .container .content .pswLogin li.username .clear:hover,
+#loginPopup .container .content .pswLogin li.password .clear:hover {
+  cursor: pointer;
+}
+#loginPopup .container .content .pswLogin li.username input {
+  background: #fff url(./images/login_user.png) no-repeat 10px center;
+}
+#loginPopup .container .content .pswLogin li.username .err_msg {
+  background: url(./images/charge_warn.png) no-repeat 0 center;
+}
+#loginPopup .container .content .pswLogin li.password input {
+  background: #fff url(./images/login_user.png) no-repeat 10px center;
+}
+#loginPopup .container .content .pswLogin li.password .err_msg {
+  background: url(./images/charge_error.png) no-repeat 0 center;
+}
+#loginPopup .container .content .msgLogin {
+  display: none;
+}
+#loginPopup .container .content .msgLogin li .err_msg {
+  color: #f00;
+  font-size: 12px;
+  margin-top: 4px;
+  padding-left: 16px;
+  height: 16px;
+  line-height: 16px;
+}
+#loginPopup .container .content .msgLogin li.phoneNum {
+  height: 70px;
+  position: relative;
+}
+#loginPopup .container .content .msgLogin li.phoneNum input {
+  width: 320px;
+  height: 38px;
+  padding-left: 38px;
+  border: 1px solid #e8e8e8;
+  background: #fff url(./images/login_phone.png) no-repeat 10px center;
+}
+#loginPopup .container .content .msgLogin li.phoneNum .err_msg {
+  background: url(./images/charge_warn.png) no-repeat 0 center;
+}
+#loginPopup .container .content .msgLogin li.phoneNum .clear {
+  width: 20px;
+  height: 20px;
+  display: block;
+  position: absolute;
+  top: 9px;
+  right: 9px;
+  background: url(./images/login_clear.png) no-repeat center center;
+}
+#loginPopup .container .content .msgLogin li.phoneNum .clear:hover {
+  cursor: pointer;
+}
+#loginPopup .container .content .msgLogin li.dynamicNum {
+  height: 70px;
+  position: relative;
+}
+#loginPopup .container .content .msgLogin li.dynamicNum input {
+  width: 200px;
+  height: 38px;
+  border: 1px solid #e8e8e8;
+  padding-left: 38px;
+  float: left;
+  background: #fff url(./images/login_verify.png) no-repeat 10px center;
+}
+#loginPopup .container .content .msgLogin li.dynamicNum a {
+  width: 119px;
+  height: 36px;
+  border: 1px solid #e8e8e8;
+  border-left: none;
+  background: #e8e8e8;
+  float: right;
+  line-height: 38px;
+  text-align: center;
+  font-size: 14px;
+  color: #09dbc6;
+}
+#loginPopup .container .content .msgLogin li.dynamicNum .err_msg {
+  position: absolute;
+  left: 0;
+  top: 40px;
+  background: url(./images/charge_error.png) no-repeat 0 center;
+}
+#loginPopup .container .content .login_footer li.forVerify {
+  width: 320px;
+  height: 38px;
+  margin-bottom: 26px;
+}
+#loginPopup .container .content .login_footer li.forVerify input {
+  float: left;
+  height: 38px;
+  width: 180px;
+  border: 1px solid #e8e8e8;
+  padding-left: 38px;
+  background: #fff url(./images/login_verify.png) no-repeat 10px center;
+}
+#loginPopup .container .content .login_footer li.forVerify a {
+  float: right;
+  width: 120px;
+  height: 38px;
+  background: #e8e8e8;
+  color: #666;
+  line-height: 38px;
+  text-align: center;
+  font-size: 20px;
+  letter-spacing: 6px;
+}
+#loginPopup .container .content .login_footer li.loginBtn {
+  margin-top: 24px;
+  margin-bottom: 20px;
+}
+#loginPopup .container .content .login_footer li.loginBtn a {
+  width: 320px;
+  height: 40px;
+  background: #09dbc6;
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+  display: block;
+  letter-spacing: 4px;
+}
+#loginPopup .container .content .login_footer li.fastLogin {
+  border-top: 1px solid #e8e8e8;
+  position: relative;
+  padding-top: 26px;
+  height: 40px;
+}
+#loginPopup .container .content .login_footer li.fastLogin .legend {
+  font-size: 14px;
+  width: 100px;
+  height: 14px;
+  line-height: 14px;
+  text-align: center;
+  background: #fff;
+  color: #999;
+  position: absolute;
+  top: 0;
+  left: 110px;
+  margin-top: -7px;
+}
+#loginPopup .container .content .login_footer li.fastLogin .wayLogo {
+  background: blue;
+}
+#loginPopup .container .content .login_footer li.fastLogin .wayLogo a {
+  display: block;
+  width: 40px;
+  height: 40px;
+  float: left;
+  margin-left: 40px;
+}
+#loginPopup .container .content .login_footer li.fastLogin .wayLogo a.tt {
+  margin-left: 60px;
+  background: url(./images/account.png) no-repeat 0 0;
+}
+#loginPopup .container .content .login_footer li.fastLogin .wayLogo a.tt:hover {
+  background: url(./images/account.png) no-repeat 0 -50px;
+}
+#loginPopup .container .content .login_footer li.fastLogin .wayLogo a.qq {
+  background: url(./images/account.png) no-repeat -100px 0;
+}
+#loginPopup .container .content .login_footer li.fastLogin .wayLogo a.qq:hover {
+  background: url(./images/account.png) no-repeat -100px -50px;
+}
+#loginPopup .container .content .login_footer li.fastLogin .wayLogo a.weixin {
+  background: url(./images/account.png) no-repeat -50px 0;
+}
+#loginPopup .container .content .login_footer li.fastLogin .wayLogo a.weixin:hover {
+  background: url(./images/account.png) no-repeat -50px -50px;
+}
+#loginPopup .container .content .login_footer li.aside {
+  color: #999;
+  font-size: 14px;
+  height: 14px;
+  line-height: 14px;
+}
+#loginPopup .container .content .login_footer li.aside .autoLogin {
+  padding-left: 20px;
+  margin-right: 50px;
+  background: url(./images/login_uncheck.png) no-repeat 0 center;
+
+#loginPopup .container .content .login_footer li.aside .autoLogin.active {
+  background: url(./images/login_checked.png) no-repeat 0 center;
+}
+#loginPopup .container .content .login_footer li.aside .autoLogin:hover {
+  cursor: pointer;
+}
+#loginPopup .container .content .login_footer li.aside a {
+  color: #999;
+  margin-left: 20px;
+}
+#loginPopup .container .content .login_footer li.aside a.register {
+  color: #09dbc6;
+  text-decoration: underline;
+}
+#loginPopup .container .content .login_footer li.aside a:hover {
+  color: #09dbc6;
+  text-decoration: underline;
+}

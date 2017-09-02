@@ -1,0 +1,63 @@
+@font-face {
+  font-family: 'TradeNum';
+  src: url(../fonts/DINCond-Medium.otf);
+}
+@font-face {
+  font-family: 'NoticeTime';
+  src: url(../fonts/HelveticaNeue-Light.otf);
+}
+body,
+ol,
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+th,
+td,
+dl,
+dd,
+form,
+fieldset,
+legend,
+input,
+textarea,
+select {
+  margin: 0;
+  padding: 0;
+}
+body {
+  min-width: 1180px;
+  font: 12px;
+  font-family: "Microsoft YaHei", "\5B8B\4F53", "Arial Narrow", HELVETICA;
+  background: #fff;
+  -webkit-text-size-adjust: 100%;
+  position: relative;
+}
+a {
+  color: #666;
+  text-decoration: none;
+}
+a:hover {
+  color: #55cbd1;
+}
+em {
+  font-size: normal;
+}
+li {
+  list-style: none;
+}
+img {
+  border: 0;
+  vertical-align: middle;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+p {
+  word-break: break-word;
+}
