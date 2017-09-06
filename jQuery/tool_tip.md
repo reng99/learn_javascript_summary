@@ -23,6 +23,11 @@
      
     (function(){
         $(document).find("input").mouseenter(function(){
+            // 没有title属性时候直接返回
+            if(this.title==''||this.title==undefined){
+                return;
+            }
+            
             // 移除本身带有的提示
             this._title = this.title;
             this.title="";
@@ -77,7 +82,20 @@ this.title="";
 
 ```
 
-2.装换成为鼠标所在位置显示
+2.没有title字段的`input`进行处理
+
+因为是对整个`document`内的`input`元素进行监听的，有必要进行这一步的处理，不然会弹出一个空白的`div`，体验比较差。
+
+```javascript
+
+    // 没有title属性时候直接返回
+    if(this.title==''||this.title==undefined){
+        return;
+    }
+
+```
+
+3.装换成为鼠标所在位置显示
 
 这个功能，更改一下鼠标的事件就行了，详细代码如下：
 
@@ -85,6 +103,11 @@ this.title="";
 
     (function(){
         $(document).find("input").mouseenter(function(e){
+            // 没有title属性时候直接返回
+            if(this.title==''||this.title==undefined){
+                return;
+            }
+            
             // 移除本身带有的提示
             this._title = this.title;
             this.title="";
