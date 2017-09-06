@@ -23,8 +23,10 @@
      
     (function(){
         $(document).find("input").mouseenter(function(){
-            // 没有title属性时候直接返回
-            if(this.title==''||this.title==undefined){
+            // 没有title属性或者title字段为空或者为undefined的时候直接返回
+            if(this.title==""||this.title=="undefined"){
+                this.title="";
+                $("#tooltip").remove();
                 return;
             }
             
@@ -88,8 +90,10 @@ this.title="";
 
 ```javascript
 
-    // 没有title属性时候直接返回
-    if(this.title==''||this.title==undefined){
+    // 没有title属性或者title字段为空或者为undefined的时候直接返回
+    if(this.title==""||this.title=="undefined"){
+        this.title="";
+        $("#tooltip").remove();
         return;
     }
 
@@ -103,8 +107,10 @@ this.title="";
 
     (function(){
         $(document).find("input").mouseenter(function(e){
-            // 没有title属性时候直接返回
-            if(this.title==''||this.title==undefined){
+            // 没有title属性或者title字段为空或者为undefined的时候直接返回
+            if(this.title==""||this.title=="undefined"){
+                this.title="";
+                $("#tooltip").remove();
                 return;
             }
             
