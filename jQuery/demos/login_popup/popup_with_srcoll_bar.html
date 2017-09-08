@@ -1,0 +1,56 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>弹出层的登录框实现</title>
+    <link href="./common.css" rel="stylesheet"></head>
+    <link href="./popup_with_srcoll_bar.css" rel="stylesheet">
+<body>
+    <button id="login">点击弹出层登录</button>
+    <div>
+        <h1 style="height:2000px;background: yellow;width:100%;">撑开高度</h1>
+    </div>
+
+    <div id="loginPopup">
+        <div class="layer"></div>
+        <div class="container">
+            <ul class="tabs">
+                <li class="active">密码登录</li>
+                <li>短信登录</li>
+                <i class="close">&times;</i>
+            </ul>
+            <div class="content">
+                <ul class="pswLogin">
+                    <li class="username"><input type="text" placeholder="用户名"/> <i class="clear"></i><p class="err_msg">用户名不能为空</p></li>
+                    <li class="password"><input type="text" placeholder="密码"/><i class="clear"></i> <p class="err_msg">用户名或密码不正确</p></li>
+                </ul>
+                <ul class="msgLogin">
+                    <li class="phoneNum"><input type="text" placeholder="手机号码"><i class="clear"></i><p class="err_msg">手机号不能为空</p></li>
+                    <li class="dynamicNum"><input type="text" placeholder="动态码"><a href="javascript:void(0)">获取动态码</a><p class="err_msg">请输入正确的动态码</p></li>
+                </ul>
+                <ul class="login_footer">
+
+                    <!--验证三次失败之后需要填写验证码，否则隐藏-->
+                    <li class="forVerify">
+                        <input type="text" placeholder="验证码"><a href="javascript:void(0)">a23f</a>
+                    </li>
+
+                    <li class="aside"><span class="autoLogin active">下次自动登录</span><a href="./register.html" class="register">立即注册</a><a href="javascript:void(0)">忘记密码？</a></li>
+                    <li class="loginBtn"><a href="javascript:void()">登录</a></li>
+                    <li class="fastLogin">
+                        <div class="legend">一键登录</div>
+                        <p class="wayLogo">
+                            <a href="javascript:void(0)" class="tt"></a>
+                            <a href="javascript:void(0)" class="qq"></a>
+                            <a href="javascript:void(0)" class="weixin"></a>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../../lib/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="./popup_with_srcoll_bar.js"></script>
+    </body>
+</html>
