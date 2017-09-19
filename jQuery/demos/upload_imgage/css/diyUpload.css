@@ -1,0 +1,137 @@
+@charset "utf-8";
+/* CSS Document*/
+#box{
+	width:540px;
+	height: 600px;
+	background: #e8e8e8;
+	margin:0 auto;
+	position: relative;
+}
+.parentFileBox {
+	width:100%;
+	min-height:130px;
+	padding:0;
+	padding-bottom:10px;
+	position:relative;
+	z-index: 80;
+	display: block;
+	zoom:1;
+}
+.parentFileBox:after{
+	width:0;
+	height: 0;
+	content:".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+}
+.btnIcon{
+	width:120px;
+	height: 120px;
+	position: absolute;
+	z-index:90;
+	cursor: pointer;
+}
+.btnIcon .webuploader-pick{
+	width:120px;
+	height: 120px;
+	background: url("../images/addBtn.png") no-repeat 0 0;
+	padding:0px;
+	margin:10px 20px 10px 10px;
+}
+.parentFileBox .diyUploadHover{
+	float:left;
+	border:1px solid #ccc;
+	width:120px;
+	height:120px;
+	margin-top:10px;
+	margin-left:10px;
+	overflow:hidden;
+	position:relative;
+}
+.parentFileBox .diyUploadHover:first-child{
+	margin-left:140px;
+}
+.parentFileBox .diyUploadHover .viewThumb {
+	float: left;
+	position:absolute;
+	top:0;
+	left:0;
+	width:120px;
+	height:120px;
+	overflow:hidden;
+}
+.parentFileBox .diyUploadHover .viewThumb img {
+	display: block;
+	width:120;
+	height:120px;
+}
+.parentFileBox .diyUploadHover .diySuccess {
+	position:absolute;
+	width:32px;
+	height:32px;
+	top:2px;
+	right:2px;
+	cursor:pointer;
+	display:none;
+}
+.parentFileBox .diyUploadHover .diyCancel {
+	position: absolute;
+	bottom:0;
+	left:50px;
+	width:20px;
+	height: 20px;
+	display: none;
+	cursor: pointer;
+	line-height: 20px;
+	text-align: center;
+	font-size:16px;
+	color:#fff;
+}
+// .parentFileBox .diyUploadHover  .diySuccess {
+// 	background:url(../images/check_alt.png) no-repeat;
+// 	cursor:default;
+// }
+// .parentFileBox .diyUploadHover .diyFileName {
+// 	position:absolute;
+// 	bottom:0px;
+// 	left:0px;
+// 	width:100%;
+// 	height:20px;
+// 	line-height:20px;
+// 	text-align:center;
+// 	color:#fff;
+// 	font-size:12px;
+// 	display:none;
+// 	background:url(../images/bgblack.png);
+// }
+// .parentFileBox .diyUploadHover:hover {
+// 	-moz-box-shadow: 3px 3px 4px #FF0;
+// 	-webkit-box-shadow: 3px 3px 4px #FF0;
+// 	box-shadow: 3px 3px 4px #FF0;
+// }
+.parentFileBox .layer{
+	position: absolute;
+	bottom:0;
+	left:0;
+	width:120px;
+	height: 20px;
+	-webkit-opacity:0.6;
+	-moz-opacity:0.6;
+	-khtml-opacity:0.6;
+	opacity:0.6;
+	filter:alpha(opacity=50);
+	background:#000;
+	display: none;
+}
+.parentFileBox .diyUploadHover:hover .diyCancel {
+	display:block;
+}
+.parentFileBox .diyUploadHover:hover .diyFileName {
+	display:block;
+}
+.parentFileBox .diyUploadHover:hover .layer{
+	display: block;
+}
+
+
