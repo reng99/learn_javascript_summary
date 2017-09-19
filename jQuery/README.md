@@ -12,4 +12,3 @@
 
 - [tooltip侧边提示属性title的内容](./tool_tip.md) 2017-09-06
 
-- [jquery实现图片的上传](./upload_imgs.md) 2017-09-09
