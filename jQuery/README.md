@@ -2,7 +2,7 @@
 
 - [attr && pros](./attr_pros.md)
 
-- [使用jquery实现的demos](./demos/) 2017-08-11
+- [demos](./demos/) :blush:
 
     - [不限制图片个数的banner轮播](./demos/banner_without_limits_imgNub/) 2017-08-11
 
