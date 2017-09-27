@@ -14,6 +14,8 @@
 
     - [上传图片](./demos/upload_image/) 2017-09-19
 
+    - [图片预览](./demos/scale_imgs_demo/) 2017-09-27
+
 - [页面滚动返回顶部](./to_top.md) 2017-08-17
 
 - [页脚适应屏幕大小改变](./footer_suit_browser.md) 2017-08-18

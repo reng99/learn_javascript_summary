@@ -63,3 +63,5 @@ $(window).focus(function(){
 - [上传图片](./upload_image/) (2017-09-19)
 
     jquery实现图片的上传，支持多图
+
+- [弹出图片预览](./scale_imgs_demo/) (2017-09-27)
