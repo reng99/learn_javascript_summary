@@ -1,8 +1,8 @@
 ## 图片弹出预览
 
-为了更好的用户的体验效果，需要实现小图的原图的浏览。
+为了更好的用户体验，有时候需要实现小图的原图的浏览。
 
-这里实现的一个例子如下：
+这里实现的一个例子：
 
 原图：
 
@@ -12,12 +12,14 @@
 
 ![after_scale](./images/after_scale.png)
 
-本demo支持的版本未ie8+
+本demo支持的版本为ie8+
 
 #### 使用的方法
 
-使用方法请参考链接[http://www.dowebok.com/192.html](http://www.dowebok.com/192.html)
+使用方法请参考链接[here](http://www.dowebok.com/192.html)
 
 ### 参考链接
 
-[http://www.dowebok.com/demo/192/](http://www.dowebok.com/demo/192/)
+[viewerJS](http://www.dowebok.com/demo/192/)
+
+顺便放出一个不错效果的网站[here](http://www.dowebok.com/)
