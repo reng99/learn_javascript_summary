@@ -65,3 +65,5 @@ $(window).focus(function(){
     jquery实现图片的上传，支持多图
 
 - [弹出图片预览](./scale_imgs_demo/) (2017-09-27)
+
+- [capslock输入的大小写锁定](./capslock/) (2017-10-01)

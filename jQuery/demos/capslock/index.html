@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>capslock</title>
+	<meta charset="utf-8" />
+	<style type="text/css">
+		#demo{
+			position: relative;
+			width:392px;
+			margin:0 auto;
+			line-height: 40px;
+		margin-top:80px;
+			zoom:1;
+		}
+		#demo:after{
+			width:0;
+			height: 0;
+			content:".";
+			display: block;
+			clear: both;
+			visibility: hidden;
+		}
+		#demo label{
+			width:90px;
+			height: 42px;
+			font-size:14px;
+			float: left;
+			display: block;
+			text-align: right;
+		}
+		#pwd{
+			width:300px;
+			height: 40px;
+			border:1px solid #e5e5e5;
+			outline: none;
+			background: #f7f7f7;
+			text-indent: 10px;
+			float: left;
+			display: block;
+		}
+		#capital_password{
+			width:220px;
+			height: 30px;
+			line-height: 30px;
+			background:#f7f7f7;
+			position: absolute;
+			top:44px;
+			left:90PX;
+			font-size:12px;
+			display: none;
+			text-align: center;
+			color:#f00;
+		}
+		.warn{
+			text-align: center;
+			color:#f00;
+			margin-top:60px;
+			font-size:12px;
+		}
+		.link{
+			font-size: 12px;
+			text-align: center;
+			margin-top:10px;
+		}
+		.link a{
+			color:#09c7d1;
+			text-decoration: none;
+		}
+		.link a:hover{
+			text-decoration: underline;
+		}
+	</style>
+</head>
+<body>
+	<div id="demo">
+		<label for="pwd">请输入密码&nbsp;:&nbsp;</label>
+		<input type="text" name="password" id="pwd"/>
+	</div>
+
+	<div class="warn">为了方便测试， 我将input 中的type的attr设为text了，实际中是password</div>
+	<div class="link">更多内容请访问我的<a href="https://github.com/reng99" target="_blank">github</a></div>
+	
+	<script type="text/javascript" src="../../lib/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+
+	/**
+	 * 调用：
+     * 输入框输入密码的大写提示
+     * toast(arg1,arg2);arg1是输入框input ，arg2是"#capital_password"，自己在下面添加的id
+     */
+    (function(){
+        // 移除IE10+给出的锁定大小写的提示
+        document.msCapsLockWarningOff = true;
+       
+        // 调用
+        toast("#pwd","#capital_password");
+
+        function toast(el,target){
+            $(el).parent().append("<div class='capslock' id='capital_password'>键盘大写锁定已打开，请注意大小写</div>");
+            
+            var capital = false;
+
+            $(el).on("keydown",function(e){
+                if(e.keyCode === 20 && capital){
+                    $(this).parent().find(".capslock").show();
+                }else{
+                    $(this).parent().find(".capslock").hide();
+                }
+            }).on('focus',function(){
+                capital = false;
+            }).on('keypress',function(e){
+                capsLock(e,$(this));
+            }).on('blur',function(){
+                //输入框失去焦点，提示隐藏
+                // $(target).hide();
+                $(this).parent().find(".capslock").hide();
+            });
+
+
+            function capsLock(e,_this){
+                var keyCode = e.keyCode || e.which; // 按键的keyCode
+                var isShift = e.shiftKey || keyCode === 16 || false; // shift键是否按住
+                console.log(isShift);
+                if(keyCode === 9){
+                    $(target).hide();
+                }else{
+                    /**指定位置的字符的 Unicode 编码 , 通过与shift键对于的keycode，就可以判断capslock是否开启了
+		            *90 Caps Lock 打开，且没有按住shift键
+                    *122 Caps Lock打开，且按住shift键
+                    **/
+                    // ((keyCode >= 97 && keyCode <= 122) && isShift)
+                    if(((keyCode >= 65 && keyCode <= 90) && isShift) || (keyCode >= 65 && keyCode <= 90)){
+                        console.log("show");
+                        _this.parent().find(".capslock").show();
+                        capital = false;
+                    }else{
+                        $(target).hide();
+                        capital = true;
+                    }
+                }
+            }
+        }
+    })();
+
+	</script>
+</body>
+</html>
