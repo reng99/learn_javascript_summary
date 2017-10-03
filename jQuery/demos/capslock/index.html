@@ -44,8 +44,8 @@
 			line-height: 30px;
 			background:#f7f7f7;
 			position: absolute;
-			top:44px;
-			left:90PX;
+			/*top:44px;*/
+			/*left:90PX;*/
 			font-size:12px;
 			display: none;
 			text-align: center;
@@ -102,7 +102,10 @@
 
             $(el).on("keydown",function(e){
                 if(e.keyCode === 20 && capital){
-                    $(this).parent().find(".capslock").show();
+                    $(this).parent().find(".capslock").css({
+                    	top:$(this).height() + 4 +"px",// 加4s是考虑到了上下边框和留出2个像素的距离
+                    	left:$(this).parent().find("label").outerWidth(true) + "px"
+                    }).show();
                 }else{
                     $(this).parent().find(".capslock").hide();
                 }
@@ -131,7 +134,10 @@
                     // ((keyCode >= 97 && keyCode <= 122) && isShift)
                     if(((keyCode >= 65 && keyCode <= 90) && isShift) || (keyCode >= 65 && keyCode <= 90)){
                         console.log("show");
-                        _this.parent().find(".capslock").show();
+                        _this.parent().find(".capslock").css({
+                    	top:_this.height() + 4 +"px",// 加4s是考虑到了上下边框和留出2个像素的距离
+                    	left:_this.parent().find("label").outerWidth(true) + "px"
+                    }).show();
                         capital = false;
                     }else{
                         $(target).hide();
