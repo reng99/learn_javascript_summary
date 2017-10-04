@@ -44,8 +44,8 @@
 			line-height: 30px;
 			background:#f7f7f7;
 			position: absolute;
-			/*top:44px;*/
-			/*left:90PX;*/
+			/*top:44px; js控制*/
+			/*left:90PX;js控制*/
 			font-size:12px;
 			display: none;
 			text-align: center;
@@ -104,7 +104,7 @@
                 if(e.keyCode === 20 && capital){
                     $(this).parent().find(".capslock").css({
                     	top:$(this).height() + 4 +"px",// 加4s是考虑到了上下边框和留出2个像素的距离
-                    	left:$(this).parent().find("label").outerWidth(true) + "px"
+                    	left:$(this).parent().find("label").outerWidth(true) + "px" // outerWidth(true)包含了label的padding,border和margin,如果要考虑input和label的距离，这里考虑label的margin或者padding不考虑input的margin或padding值
                     }).show();
                 }else{
                     $(this).parent().find(".capslock").hide();
