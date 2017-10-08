@@ -156,6 +156,35 @@ NODE_MODULES_PATHS(START)
 ```
 
 
+> 补充 2017-10-08
+
+一个文件就是一个模块（module）
+
+每个模块都有自己的作用域。
+
+我们使用var来申明一个变量，它并不是全局的，而是属于当前模块下的。
+
+```javascript
+
+var  a = 10;
+
+console.log(a); // 10
+
+console.log(global.a); // undefined
+
+```
+
+模块加载系统
+
+```javascript
+
+require('模块');
+
+eg: require('reng.js');
+
+```
+
+
 
 
 
