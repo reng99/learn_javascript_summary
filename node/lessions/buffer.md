@@ -300,3 +300,10 @@ buffer length : 11
 
 详细的参考，请移步[这里](http://www.runoob.com/nodejs/nodejs-buffer.html)
 
+> 补充 2017-10-08
+
+buffer类
+  一个用于更好的操作二进制数据的类。我们在操作文件或者网络数据的时候，其实操作的就是二进制数据流。Node为我们提供了一个更加方便的去操作这种数据流的类Buffer，他是一个全局的类。
+
+
+
