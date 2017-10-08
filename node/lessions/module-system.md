@@ -218,6 +218,24 @@ require模块查找机制
 
 ```
 
+**module 和 exports**
+
+在一个模块中通过var定义的变量，其作用域是当前模块，外部是不能够直接访问。如果我们想一个模块能够访问另外一个模块中定义的变量，可以：
+
+1.把变量作为global对象的一个属性，但是这样的方式是不推荐的
+
+2.使用模块对象 module`(module:保存提供和当前模块有关的信息。在这个module对象，有一个子对象：exports对象，我们可以通过这个对象把一个模块中的局部变量对象对外进行访问)`
+
+```javascript
+
+1. global.a = 100;
+
+2.var a = 100;module.exports.a = a;
+// 其实在模块的作用域，还有一个内置的模块对象，exports,它其实就是module.exports
+
+// 注意：在开发的过程中不要改变exports或者是module.exports的指向关系
+
+```
 
 
 
