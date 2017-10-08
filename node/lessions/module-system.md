@@ -180,13 +180,43 @@ console.log(global.a); // undefined
 
 require('模块');
 
-eg: require('reng.js');
+eg: require('./reng.js');
 
 ```
 
+模块加载机制的路径
 
+绝对路径--也就是当前模块在电脑硬盘上的路径：
 
+```javascript
 
+require('b:/path/to/reng.js');
+
+```
+
+相对路径--相同目录低下的文件的路径
+
+```javascript
+
+require('./reng.js');
+
+```
+
+require模块查找机制
+
+```bash
+
+// 1.首先按照加载的模块的文件名称进行查找
+
+// 2.如果还是没有找到的话，则会在模块文件名后面加上.js后缀，进行查找
+
+// 3.如果还是没有找到，则会在文件名称的后面加上.json后缀，进行查找
+
+// 4.如果还是没有，则会在文件名称后面加上.node的后缀，进行查找
+
+// 5.如果还是没有找到的话就抛出错误
+
+```
 
 
 
