@@ -32,6 +32,8 @@
 
 - [fs文件系统模块](./lessions/file_system.md) 2017-10-08
 
+- [使用node 进行web开发](./lessions/node_web_develope.md) 2017-10-09
+
 
 ##  node demo
 
