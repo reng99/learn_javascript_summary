@@ -34,3 +34,17 @@
  var foo = a && b && c , // 0 相当于 a && (b && c)
     bar = a || b || c; // 1
 ```
+
+注意⚠️ 以下有两点需要留意下
+
+1. 在javascript的逻辑运算中`0,'',null,false,undefined,NaN`都会判定为`false`，其他的为`true`
+
+2. 因为 Javascript 的内置弱类型域 (weak-typing domain)，所以对严格的输入验证这一点不太在意，即便使用 && 或者 || 运算符的运算数不是布尔值，仍然可以将它看作布尔运算。虽然如此，还是建议如下
+```javascript
+ if(foo){ ... }     //不够严谨
+ if(!!foo){ ... }   //更为严谨，!!可将其他类型的值转换为boolean类型
+```
+
+**参考**
+
+http://www.cnblogs.com/coco1s/p/5303041.html
