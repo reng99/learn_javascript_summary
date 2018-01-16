@@ -39,6 +39,10 @@
 
 - [http_reptile 小爬虫](./http_reptile/)
 
+## node 的注意事项
+
+- [path问题](./attentons/path.md)
+
 
 ## node技巧
 
