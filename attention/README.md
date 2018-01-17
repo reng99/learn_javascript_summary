@@ -15,3 +15,5 @@
 - [wepack的踩坑记录](./wepack的踩坑记录/)
 
 - [mvc](./mvc.md) 2017-08-27
+
+- [webpack从零搭建vue项目草稿](./webapck_build_vue_project.md)
