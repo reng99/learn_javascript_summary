@@ -8,3 +8,11 @@
 path.resolve('reng/name','../jia');
 // reng/jia
 ```
+### path.join(from,to)
+
+类似`path.resolve`，将片段的路径拼接:
+
+```javascript
+path.join('reng/name','../jia');
+// reng/jia
+```
